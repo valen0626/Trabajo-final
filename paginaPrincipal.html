@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <input type="button" value="salir" onclick="salir()" />
+    </nav>
+    <main>
+      <section class="seccionOpciones">
+        <h2>Consultar saldo</h2>
+        <p id="verSaldo"></p>
+        <input type="button" value="Consultar" onclick="consultarSaldo()" />
+      </section>
+      <section class="seccionOpciones">
+        <form action="">
+          <h2>Consignar</h2>
+          <input type="text" placeholder="Numero de cuenta" id="numeroCuenta" />
+          <input
+            type="text"
+            placeholder="Cantidad a consignar"
+            id="valorAConsignar"
+          />
+          <input type="button" value="Consignar" onclick="consignar()" />
+        </form>
+      </section>
+      <section class="seccionOpciones">
+        <form action="">
+          <h2>Retirar dinero</h2>
+          <input
+            type="text"
+            placeholder="Cantidad a retirar"
+            id="valorARetirar"
+          />
+          <input type="button" value="Retirar" onclick="retirar()" />
+        </form>
+      </section>
+      <section class="seccionOpciones">
+        <form action="">
+          <h2>Transferir dinero</h2>
+          <input
+            type="text"
+            placeholder="Cantidad a transferir"
+            id="valorTransferir"
+          />
+          <input
+            type="text"
+            placeholder="Numero de cuenta"
+            id="cuentaTransferir"
+          />
+          <select name="listaBancos" id="listaBancos">
+            <option value="">Seleccione un banco</option>
+            <option value="bancolombia" id="bancolombia">Bancolombia</option>
+            <option value="nequi" id="nequi">Nequi</option>
+            <option value="banco-bogotá" id="banco-bogota">Banco de bogotá</option>
+            <option value="bbva" id="bbva">BBVA colombia</option>
+          </select>
+          <input type="button" value="Transferir" onclick="transferir()" />
+        </form>
+      </section>
+    </main>
+    <script src="./assets/js/movimientos.js"></script>
+  </body>
+</html>
