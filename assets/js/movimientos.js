@@ -43,19 +43,14 @@ const transferir = () => {
     const numeroCuenta = document.querySelector("#cuentaTransferir")
     const transferirHecho = document.createElement("section");
     const nuevaFecha = new Date();
-    const option = document.querySelector('option')
-    const bancos = {
-        bancolombia: document.querySelector('#bancolombia'),
-        nequi: document.querySelector('#nequi'),
-        bancoBogota:document.querySelector('#banco-bogota'),
-        bbva: document.querySelector('#bbva')
-    }
+    const seleccionar = document.querySelector('#listaBancos')
+    const opciones = seleccionar.options[seleccionar.selectedIndex];
     transferirHecho.classList.add("comprobante");
     if (parseInt(valorTransferir.value) <= saldo) {
       saldo -= parseInt(valorTransferir.value);
       transferirHecho.innerHTML += `<h1>!Transferencia éxitosa¡</h1>
       <h2>Numero de cuenta: </h2><p>${numeroCuenta.value}</p>
-      <h2>Banco: </h2><p>${}</p>
+      <h2>Banco: </h2><p>${opciones.text}</p>
       <h2>Valor transferido: </h2><p>${valorTransferir.value}</p>
       <h2>Fecha: </h2><p>${nuevaFecha}</p>`;
       main.append(transferirHecho);
