@@ -148,3 +148,77 @@ li:hover{
     background-color: green;
     color: white;
 }
+
+.bodyretirar{
+    background-image: url(/assets/img/fondo.png);
+   }
+   
+.retirarmain{
+    margin-top: 170px;
+    margin-left: 190px;
+    width: 50%;
+    height: 100px;
+    padding: 150px;
+    background-color: white;
+    border-radius: 15px;
+    border: solid 4px green;     
+   }
+   
+   .inputretirar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: 18px;
+    margin-top: 30px;
+    margin-bottom: -23px;
+    padding: 10px; 
+    width: 100vh;
+    border-radius: 10px;
+    border: solid 2px black;
+   }
+   
+   .tituretirar{
+       background-color: green;
+       width: 300px;
+       text-align: center;
+       align-items: center;
+       justify-content: center;
+       margin-left: -70px;
+       margin-top: -240px;
+       color: white;
+       border: solid 2px black;
+       border-radius: 10px;
+       font-style:italic; 
+   }
+   
+   .imgretirar{
+       display:flex;
+       flex-direction: column;
+       margin-left: -200px;
+       margin-top: -80px;
+       width: 110px;
+       height: 110px;
+       border-radius: 100px;
+       border: solid 2px black;
+   }
+   
+   .btonretirar{
+       margin-top: 50px;
+       margin-left: 55px;
+       align-items: center;
+       padding: 10px;
+       width: 160px;
+       background-color:green;
+       color: white;
+       font-style:italic;
+       cursor:pointer;
+       border: solid 2px black;
+       border-radius: 10px;
+       font-weight:bold;
+   }
+
+   .btonretirar:hover{
+    background-color: lightgreen;
+   }

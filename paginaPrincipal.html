@@ -42,12 +42,15 @@
         <input type="button" value="Consignar" onclick="consignar()" />
       </form>
     </section>
-    <section class="seccionOpciones">
+    <section>
       <form action="">
-        <h2>Retirar dinero</h2>
-        <input type="text" placeholder="Cantidad a retirar" id="valorARetirar" />
-        <input type="button" value="Retirar" onclick="retirar()" />
+        <main id="retirar">
+        <h1 id="tituloretirar">RETIRAR</h1>
+        <img id="imgretirar" src="/assets/img/retirar.jpg" alt="imagen">
+        <input class="inputretirar" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA RETIRAR" id="ValorARetirar" />
+        <input id="botonretirar" type="button" value="RETIRAR" onclick="retirar()"/>
       </form>
+    </main>
     </section>
     <section class="seccionOpciones">
       <form action="">
@@ -65,6 +68,7 @@
       </form>
     </section>
   </main>
+
   <script src="./assets/js/movimientos.js"></script>
 </body>
 

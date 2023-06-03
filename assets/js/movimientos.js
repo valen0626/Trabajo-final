@@ -1,3 +1,18 @@
+const estiloretirar = document.querySelector ('#retirar')
+const estiloinput = document.querySelector ('.inputretirar')
+const estilotitulo = document.querySelector ('#tituloretirar')
+const estilofondo = document.querySelector ('body')
+const estiloimagen = document.querySelector ('#imgretirar')
+const estiloboton= document.querySelector ('#botonretirar')
+
+estiloretirar.classList.add('retirarmain')
+estilotitulo.classList.add('tituretirar')
+estilofondo.classList.add ('retirarbody')
+estiloimagen.classList.add('imgretirar')
+estiloinput.classList.add("inputretirar")
+estiloboton.classList.add("btonretirar")
+
+
 const main = document.querySelector("main");
 let saldo = 0;
 function consultarSaldo() {
