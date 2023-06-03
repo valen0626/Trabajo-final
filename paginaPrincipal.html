@@ -19,10 +19,10 @@
       <li><a class="servicios-desplegable" href="#">SERVICIOS</a></li>
       <section class="servicios-lista">
 
-        <a href="#">RETIRAR</a>
-        <a href="#">CONSIGNAR</a>
-        <a href="#">TRANSFERIR</a>
-        <a href="#">CONSULTAR SALDO</a>
+        <a id="vistaRetirar" href="#">RETIRAR</a>
+        <a id="vistaConsignar" href="#">CONSIGNAR</a>
+        <a id="vistaTransferir" href="#">TRANSFERIR</a>
+        <a id="vistaConsultar" href="#">CONSULTAR SALDO</a>
       </section>
       <li><a href="#">Historial de movimientos</a></li>
     </ul>
@@ -30,31 +30,29 @@
 
   <main>
     <section class="seccionOpciones">
-      <h2>Consultar saldo</h2>
+      <h1 class="titulos">Consultar saldo</h2>
       <p id="verSaldo"></p>
       <input type="button" value="Consultar" onclick="consultarSaldo()" />
     </section>
     <section class="seccionOpciones">
       <form action="">
-        <h2>Consignar</h2>
+        <h1 class="titulos">Consignar</h2>
         <input type="text" placeholder="Numero de cuenta" id="numeroCuenta" />
         <input type="text" placeholder="Cantidad a consignar" id="valorAConsignar" />
         <input type="button" value="Consignar" onclick="consignar()" />
       </form>
     </section>
-    <section>
+    <section class="seccionOpciones">
       <form action="">
-        <main id="retirar">
-        <h1 id="tituloretirar">RETIRAR</h1>
-        <img id="imgretirar" src="/assets/img/retirar.jpg" alt="imagen">
-        <input class="inputretirar" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA RETIRAR" id="ValorARetirar" />
-        <input id="botonretirar" type="button" value="RETIRAR" onclick="retirar()"/>
+        <h1 class="titulos">RETIRAR</h1>
+        <img class="imgretirar" src="/assets/img/retirar.jpg" alt="imagen">
+        <input class="inputretirar" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA RETIRAR" id="valorARetirar" />
+        <input class="btn-retirar" type="button" value="RETIRAR" onclick="retirar()"/>
       </form>
-    </main>
     </section>
     <section class="seccionOpciones">
       <form action="">
-        <h2>Transferir dinero</h2>
+        <h1 class="titulos">Transferir dinero</h1>
         <input type="text" placeholder="Cantidad a transferir" id="valorTransferir" />
         <input type="text" placeholder="Numero de cuenta" id="cuentaTransferir" />
         <select name="listaBancos" id="listaBancos">
