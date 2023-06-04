@@ -2,7 +2,7 @@ const main = document.querySelector("main");
 let saldo = 0;
 function consultarSaldo() {
   const texto = document.querySelector("p");
-  texto.textContent = `Su saldo es de: $${saldo}`;
+  texto.textContent = `SU SALDO ES DE: $${saldo}`;
 }
 const salir = () => {
   location.href = "/index.html";
@@ -13,10 +13,10 @@ const consignar = () => {
   const consignarHecho = document.createElement("section");
   const nuevaFecha = new Date();
   consignarHecho.classList.add("comprobante");
-  consignarHecho.innerHTML += `<h1>!Consignación éxitosa¡</h1>
-    <p><h2>Numero de cuenta: </h2>${numeroCuenta.value}</p>
-    <p><h2>Valor Consignado: </h2>${valorAConsignar.value}</p>
-    <p><h2>Fecha: </h2>${nuevaFecha}</p>`;
+  consignarHecho.innerHTML += `<h3>!CONSIGNACIÓN ÉXITOSA¡</h3>
+    <p><h4>NUMERO DE CUENTA: </h4>${numeroCuenta.value}</p>
+    <p><h4>VALOR CONSIGNADO: </h4>${valorAConsignar.value}</p>
+    <p><h5>FECHA DE LA CONSIGNACIÓN: </h5>${nuevaFecha}</p>`;
   main.append(consignarHecho);
   saldo += parseInt(valorAConsignar.value);
 };
@@ -28,12 +28,12 @@ const retirar = () => {
   retirarHecho.classList.add("comprobante");
   if (parseInt(valorARetirar.value) <= saldo) {
     saldo -= parseInt(valorARetirar.value);
-    retirarHecho.innerHTML += `<h1>!Retiro éxitoso¡</h1>
-    <p><h2>Valor retirado: </h2>${valorARetirar.value}</p>
-    <p><h2>Fecha: </h2>${nuevaFecha}</p>`;
+    retirarHecho.innerHTML += `<h3>!RETIRO ÉXITOSO¡</h3>
+    <p><h4>VALOR RETIRADO: </h4>${valorARetirar.value}</p>
+    <p><h5>FECHA DEL RETIRO: </h5>${nuevaFecha}</p>`;
     main.append(retirarHecho);
   } else if (parseInt(valorARetirar.value) > saldo) {
-    alert("!Saldo insuficiente¡");
+    alert("!SALDO INSUFICIENTE¡");
     valorARetirar.value = "";
   }
 };
@@ -48,14 +48,14 @@ const transferir = () => {
     transferirHecho.classList.add("comprobante");
     if (parseInt(valorTransferir.value) <= saldo) {
       saldo -= parseInt(valorTransferir.value);
-      transferirHecho.innerHTML += `<h1>!Transferencia éxitosa¡</h1>
-      <h2>Numero de cuenta: </h2><p>${numeroCuenta.value}</p>
-      <h2>Banco: </h2><p>${opciones.text}</p>
-      <h2>Valor transferido: </h2><p>${valorTransferir.value}</p>
-      <h2>Fecha: </h2><p>${nuevaFecha}</p>`;
+      transferirHecho.innerHTML += `<h3>!TRANSFERENCIA ÉXITOSA¡</h3>
+      <h4>NÚMERO DE CUENTA: </h4><p>${numeroCuenta.value}</p>
+      <h4>BANCO: </h4><p>${opciones.text}</p>
+      <h4>VALOR TRANSFERIDO: </h4><p>${valorTransferir.value}</p>
+      <h5>FECHA DE LA TRANSFERENCIA: </h5><p>${nuevaFecha}</p>`;
       main.append(transferirHecho);
     } else if (parseInt(valorTransferir.value) > saldo) {
-      alert("!Saldo insuficiente¡");
+      alert("!SALDO INSUFICIENTE¡");
       valorTransferir.value = "";
     }
   };

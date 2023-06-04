@@ -24,45 +24,48 @@
         <a id="vistaTransferir" href="#">TRANSFERIR</a>
         <a id="vistaConsultar" href="#">CONSULTAR SALDO</a>
       </section>
-      <li><a href="#">Historial de movimientos</a></li>
+      <li><a href="#">HISTORIAL DE MOVIMIENTOS</a></li>
     </ul>
   </nav>
 
   <main>
     <section class="seccionOpciones">
-      <h1 class="titulos">Consultar saldo</h2>
+      <h1 class="titulo-consult">CONSULTAR SALDO</h1>
+      <img class="img-consult" src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
       <p id="verSaldo"></p>
-      <input type="button" value="Consultar" onclick="consultarSaldo()" />
+      <input class="btonconsult" type="button" value="Consultar" onclick="consultarSaldo()" />
     </section>
     <section class="seccionOpciones">
       <form action="">
-        <h1 class="titulos">Consignar</h2>
-        <input type="text" placeholder="Numero de cuenta" id="numeroCuenta" />
-        <input type="text" placeholder="Cantidad a consignar" id="valorAConsignar" />
-        <input type="button" value="Consignar" onclick="consignar()" />
+        <h1 class="titulos">CONSIGNAR</h2>
+        <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
+        <input class="input-consig" type="text" placeholder="INGRESE EL NÚMERO DE CUENTA" id="numeroCuenta" />
+        <input class="input-consigdos" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA CONGINAR " id="valorAConsignar" />
+        <input class="btnconsignar" type="button" value="CONSIGNAR" onclick="consignar()" />
       </form>
     </section>
     <section class="seccionOpciones">
       <form action="">
         <h1 class="titulos">RETIRAR</h1>
-        <img class="imgretirar" src="/assets/img/retirar.jpg" alt="imagen">
+        <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
         <input class="inputretirar" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA RETIRAR" id="valorARetirar" />
         <input class="btn-retirar" type="button" value="RETIRAR" onclick="retirar()"/>
       </form>
     </section>
-    <section class="seccionOpciones">
+    <section class="seccionOpciones-trans">
       <form action="">
-        <h1 class="titulos">Transferir dinero</h1>
-        <input type="text" placeholder="Cantidad a transferir" id="valorTransferir" />
-        <input type="text" placeholder="Numero de cuenta" id="cuentaTransferir" />
-        <select name="listaBancos" id="listaBancos">
-          <option value="">Seleccione un banco</option>
-          <option value="Bancolombia" id="bancolombia">Bancolombia</option>
-          <option value="Nequi" id="nequi">Nequi</option>
-          <option value="Banco-bogotá" id="banco-bogota">Banco de bogotá</option>
-          <option value="BBVA" id="bbva">BBVA colombia</option>
+        <h1 class="titulotrans">TRANSFERIR DINERO</h1>
+        <img class="img-trans" src="/assets/img/IMG-TRANSFERIR.jpg" alt="logo">
+        <input class="input-trans" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA TRANSFERIR" id="valorTransferir" />
+        <input class="input-transdos" type="text" placeholder="INGRESE EL NUMERO DE CUENTA" id="cuentaTransferir" />
+        <select class="tipos-bancos" name="listaBancos" id="listaBancos">
+          <option value="">SELECCIONE UNA BANCO</option>
+          <option value="Bancolombia" id="bancolombia">BANCOLOMBIA</option>
+          <option value="Nequi" id="nequi">NEQUI</option>
+          <option value="Banco-bogotá" id="banco-bogota">BANCO DE BOGOTÁ</option>
+          <option value="BBVA" id="bbva">BBVA COLOMBIA</option>
         </select>
-        <input type="button" value="Transferir" onclick="transferir()" />
+        <input class="btn-trans" type="button" value="TRANSFERIR" onclick="transferir()" />
       </form>
     </section>
   </main>

@@ -77,13 +77,15 @@ input {
 }
 
 .comprobante {
-    width: 350px;
-    height: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    padding: 150px;
     background-color: white;
-    justify-content: center;
+    border-radius: 10px;
+    border: solid 2px green;
     align-items: center;
-    text-align: justify;
-    margin: 10px;
+    justify-content: center;
 }
 
 body {
@@ -143,6 +145,7 @@ li:hover {
     background-color: green;
     color: white;
 }
+
 .seccionOpciones {
     display: flex;
     flex-direction: column;
@@ -161,6 +164,8 @@ li:hover {
     align-items: center;
     text-align: center;
     justify-content: center;
+    padding: 5px;
+    margin-top: 25px;
     width: 350px;
     border-radius: 10px;
     border: solid 2px black;
@@ -169,6 +174,8 @@ li:hover {
 .titulos{
     background-color: green;
     width: 300px;
+    margin-top: 20px;
+    margin-left: 40px;
     text-align: center;
     color: white;
     border: solid 2px black;
@@ -178,12 +185,15 @@ li:hover {
 .imgretirar {
     width: 110px;
     height: 110px;
+    margin-top: 10px;
+    margin-left: 135px;
     border-radius: 100px;
     border: solid 2px black;
 }
 .btn-retirar {
-    padding: 10px;
+    padding: 5px;
     width: 160px;
+    margin-left: 110px;
     cursor: pointer;
     font-weight: bold;
     background-color: green;
@@ -194,6 +204,188 @@ li:hover {
 }
 .btn-retirar:hover {
     color: green;
+    background-color: white;
+    border-color: green;
+}
+
+.input-consig{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 10px;
+    width: 350px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+.input-consigdos{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5px;
+    width: 350px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.img-consignar{
+    width: 110px;
+    height: 110px;
+    margin-top: -10px;
+    margin-left: 135px;
+    border-radius: 100px;
+    border: solid 2px black;
+}
+
+.btnconsignar{
+    padding: 5px;
+    width: 160px;
+    margin-left: 120px;
+    margin-top: -5px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;
+}
+
+.btnconsignar:hover{
+    color: green;
+    background-color: white;
+    border-color: green;
+}
+
+.titulo-consult{
+    background-color: green;
+    width: 300px;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+.img-consult{
+    width: 110px;
+    height: 110px;
+    margin-top: 10px;
+    border-radius: 100px;
+    border: solid 2px black;
+}
+
+.btonconsult{
+    padding: 5px;
+    width: 160px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;
+}
+
+.btonconsult:hover{
+    color:green;
+    background-color: white;
+    border-color: green;
+}
+
+.seccionOpciones-trans{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100px;
+    padding: 130px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px green;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulotrans{
+    background-color: green;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 100px;
+    text-align: center;
+    color: white;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+.input-trans{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 20px;
+    width: 450px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.input-transdos{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 0.02px;
+    width: 450px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.tipos-bancos{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 60px;
+    width: 350px;
+    border-radius: 10px;
+    border: solid 2px black;    
+}
+
+.img-trans{
+    width: 110px;
+    height: 110px;
+    margin-left: 190px;
+    margin-top: -5px;
+    border-radius: 100px;
+    border: solid 2px black;
+}
+
+.btn-trans{
+    padding: 5px;
+    width: 160px;
+    margin-top: 20px;
+    margin-left: 160px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;  
+}
+
+.tipos-bancos:hover{
+    color:green;
+    background-color: white;
+    border-color: green;
+}
+
+
+.btn-trans:hover{
+    color:green;
     background-color: white;
     border-color: green;
 }
