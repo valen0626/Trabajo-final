@@ -37,13 +37,13 @@
       <input class="btonconsult" type="button" value="Actualizar" onclick="consultarSaldo()" />
     </section>
     <section class="seccionConsignar" id="vistaConsignar">
-      <form action="">
+      <form action="" >
         <h1 class="titu-consig">Consignar</h2>
         <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
         <label for="">Numero de cuenta</label>
-        <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="numeroCuenta" name="numeroCuenta"/>
+        <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="cuentaConsignar" name="cuentaConsignar"/>
         <label for="">Valor a consignar</label>
-        <input class="input-consigdos" type="text" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
+        <input class="input-consigdos" type="text" value="$" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
         <input  class="btnconsignar" type="button" value="Consignar" onclick="consignar()" />
       </form>
     </section>
@@ -51,7 +51,8 @@
       <form action="">
         <h1 class="titulos">Retirar</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
-        <input class="inputretirar" type="text" placeholder="Cuanto desea retirar" id="valorARetirar" />
+        <label for="">Valor a retirar</label>
+        <input class="inputretirar" name="inputretirar" type="text" value="$" placeholder="Cuanto desea retirar" id="valorARetirar" />
         <input class="btn-retirar" type="button" value="Retirar" onclick="retirar()"/>
       </form>
     </section>
@@ -59,8 +60,9 @@
       <form action="">
         <h1 class="titulotrans">TRANSFERIR DINERO</h1>
         <img class="img-trans" src="/assets/img/IMG-TRANSFERIR.jpg" alt="logo">
-        <input class="input-trans" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA TRANSFERIR" id="valorTransferir" />
-        <input class="input-transdos" type="text" placeholder="INGRESE EL NUMERO DE CUENTA" id="cuentaTransferir" />
+        <label for="">Ingrese el valor a transferir</label>
+        <input class="input-trans" type="text" value="$" id="valorTransferir" name="valorTransferir" />
+        <input class="input-transdos" type="text" placeholder="Ingrese el número de cuenta" id="cuentaTransferir" name="cuentaTransferir"/>
         <select class="tipos-bancos" name="listaBancos" id="listaBancos">
           <option value="">SELECCIONE UNA BANCO</option>
           <option value="Bancolombia" id="bancolombia">BANCOLOMBIA</option>
