@@ -1,8 +1,7 @@
 body {
-    margin: 0;
     background-image: url(/assets/img/fondo.png);
-    background-size: 100%;
     font-family: sans-serif;
+    background-size: 100%;
 }
 
 main {
@@ -12,12 +11,12 @@ main {
     align-items: center;
     flex-wrap: wrap;
 }
+
 p{
     margin-top: 30px;
     font-size: 18px;
     font-weight: bold;   
 }
-
 
 h1 {
     font-weight: bolder;
@@ -25,7 +24,6 @@ h1 {
     font-family: sans-serif;
     text-align: center;
 }
-
 
 .login {
     border-radius: 20px;
@@ -37,7 +35,6 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-
 
 .login-input {
     width: 230px;
@@ -84,11 +81,6 @@ form .btn:hover {
     justify-content: center;
 }
 
-body {
-    margin: 0;
-}
-
-
 .barra {
     height: 90px;
     width: 100%;
@@ -98,6 +90,7 @@ body {
 }
 
 .btn-salir {
+    width: 180px;
     width: 180px;
     height: 40px;
     background-color: green;
@@ -109,7 +102,6 @@ body {
     color: white;
     font-size: 17px;
 }
-
 
 .btn-salir:hover {
     color: green;
