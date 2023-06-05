@@ -12,12 +12,12 @@
 <body>
   <section class="barra">
     <img class="logotipo" src="/assets/img/logo.PNG" alt="logo">
-    <input class="btn-salir" type="button" value="CERRAR SESIÓN" onclick="salir()" />
+    <input class="btn-salir" type="button" value="Cerrar sesión" onclick="salir()" />
   </section>
   <input type="checkbox" id="check">
     <label for="check">
-      <i class="fa-regular fa-circle-arrow-right" id="btn-desple"></i>
-      <i class="fa-light fa-circle-x" id="cancel"></i>
+      <i class="fa-solid fa-arrow-right" id="flecha"></i>
+      <i class="fa-solid fa-arrow-left-long" id="cancel"></i>
     </label>
     <section class="desplegable">
         <header>SERVICIOS</header>
@@ -49,7 +49,7 @@
     </section>
     <section class="seccionRetirar" id="vistaRetirar">
       <form action="">
-        <h1 class="titulos">Retirar</h1>
+        <h1 class="tituloretirar">Retirar</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
         <label for="">Valor a retirar</label>
         <input class="inputretirar" name="inputretirar" type="text" value="$" placeholder="Cuanto desea retirar" id="valorARetirar" />
@@ -64,7 +64,7 @@
         <input class="input-trans" type="text" value="$" id="valorTransferir" name="valorTransferir" />
         <input class="input-transdos" type="text" placeholder="Ingrese el número de cuenta" id="cuentaTransferir" name="cuentaTransferir"/>
         <select class="tipos-bancos" name="listaBancos" id="listaBancos">
-          <option value="">SELECCIONE UNA BANCO</option>
+          <option value=""></option>
           <option value="Bancolombia" id="bancolombia">BANCOLOMBIA</option>
           <option value="Nequi" id="nequi">NEQUI</option>
           <option value="Banco-bogotá" id="banco-bogota">BANCO DE BOGOTÁ</option>
