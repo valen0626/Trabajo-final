@@ -71,16 +71,6 @@ form .btn:hover {
     border-color: green;
 }
 
-label {
-    height: 8px;
-    color: rgb(47, 47, 47);
-    font-family: sans-serif;
-    text-align: center;
-}
-
-input {
-    margin: 10px;
-}
 
 .comprobante {
     display: flex;
@@ -166,31 +156,43 @@ body {
     border-color: green;
 }
 .seccionConsignar{
-    flex-direction: column;
-    width: 45%;
-    height: 150px;
-    padding: 200px;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 2%;
+    padding: 50px;
     margin: 20px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
-    align-items: center;
-    justify-content: center;
     display: none;
+    position: relative;
 }
 .titu-consig{
+    justify-content: center;
     background-color: green;
     width: 300px;
-    margin-top: -40px;
-    margin-left: 90px;
+    height: 30px;
     text-align: center;
     color: white;
-    border: solid 2px black;
+    border: 0;
     border-radius: 10px;
+    font-size: 20px;
 }
+.input-consig, .input-consigdos{
+    border: none;
+    border-bottom: 2px solid black;
+    align-items: center;
+    width: 200px;
+    padding: 5px;
+    font-size: 15px;
+    margin: 10px;
+    outline: none;
+}
+
 .seccionConsignar img{
-    width: 70px;
-    height: 45px;
+    width: 100px;
+    height: 100px;
 }
 .seccionRetirar{
     flex-direction: column;
@@ -333,26 +335,7 @@ body {
     background-color: white;
     border-color: green;
 }
-.input-consig{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 5px;
-    margin-top: 30px;
-    width: 430px;
-    border-radius: 10px;
-    border: solid 2px black;
-}
-.input-consigdos{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 5px;
-    margin-top: 5px;
-    width: 430px;
-    border-radius: 10px;
-    border: solid 2px black;
-}
+
 .img-consignar{
     width: 110px;
     height: 110px;
@@ -380,52 +363,53 @@ body {
     background-color: white;
     border-color: green;
 }
-.desplegabledos{
-    position: fixed;
-    left: -400px;
-    width: 400px;
-    height: 100vh;
-    background-color: white;
-    transition: all .5s ease;
-    border-radius: 20px;
-    border: solid 2px green;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-.desplegabledos section{
+.desplegable{
+    position: absolute;
+    left: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    transition: all .5s ease;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.desplegable header{
     font-size: 20px;
     color: green;
     text-align: center;
     line-height: 70px;
     background-color: white;
     user-select: none;
-    border-radius: 16px;
-
 }
 
-.desplegabledos ul a{
+.desplegable ul a{
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 40px;
+    line-height: 65px;
     font-size: 20px;
     color: green;
     padding-left: 40px;
     box-sizing: border-box;
-    border-top: 1px solid green;
+    border-top: 1px solid green ;
     border-bottom: 1px solid green;
-    transition: .2s;
+    transition: .4s;
 }
 
 ul li:hover a{
     padding-left: 50px;
 }
 
-
-ul li a:hover{
-    background-color: lightgray;
-}
-
-.desplegabledos ul a i{
+.desplegable ul a i{
     margin-right: 16px;
 }
 
@@ -433,38 +417,59 @@ ul li a:hover{
     display:none;
 }
 
-label #btn-desplegabledos{
-    position:absolute;
+#btn-desple{
+    position: absolute;
     cursor: pointer;
-    background-color: white;
-    border: solid 3px green;
-    border-radius: 10px ;
-    top: 10px;
-    left: 150px;
-    font-size: 20px;
-    padding: 15px 15px;
-    animation-name: mover;
-    animation-duration: .5s;
+    color: green;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    margin: 50px 15px;
+    font-size: 29px;
+    background: white;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 45px;
+    transition: all 0.5s ease;
 }
 
+#cancel{
+    position: absolute;
+    cursor: pointer;
+    color: green;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    margin: 50px 15px;
+    font-size: 29px;
+    background: white;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 45px;
+    transition: all 0.5s ease;
+}
 
-#check:checked ~ .desplegabledos{
+label #cancel{
+    opacity: 0;
+    visibility: hidden;
+}
+#check:checked ~ .desplegable{
     left: 0;
 }
 
-#check:checked ~ #btn-desplegabledos{
-    left: 250px;
+#check:checked~label #btn-desple {
+    margin-left: 420px;
     opacity: 0;
+    visibility: hidden;
 }
-
-#btn-desplegabledos:hover{
-    color: green;
-    background-color: lightgrey;
-    border-color: green;
+#check:checked~label #cancel {
+    margin-left: 420px;
+    opacity: 1;
+    visibility: visible;
 }
 .correcto{
-    background-color: green;
+    border-color: green;
 }
 .incorrecto{
-    background-color: red;
+    border-color: red;
 }
