@@ -12,12 +12,12 @@
 <body>
   <section class="barra">
     <img class="logotipo" src="/assets/img/logo.PNG" alt="logo">
-    <input class="btn-salir" type="button" value="CERRAR SESIÓN" onclick="salir()" />
+    <input class="btn-salir" type="button" value="Cerrar sesión" onclick="salir()" />
   </section>
   <input type="checkbox" id="check">
     <label for="check">
-      <i class="fa-regular fa-circle-arrow-right" id="btn-desple"></i>
-      <i class="fa-light fa-circle-x" id="cancel"></i>
+      <i class="fa-solid fa-arrow-right" id="flecha"></i>
+      <i class="fa-solid fa-arrow-left-long" id="cancel"></i>
     </label>
     <section class="desplegable">
         <header>SERVICIOS</header>
@@ -40,18 +40,19 @@
       <form action="">
         <h1 class="titu-consig">Consignar</h2>
         <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
-        <label for="">Numero de cuenta</label>
+        <label class="label-consig" for="">Numero de cuenta</label>
         <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="numeroCuenta" name="numeroCuenta"/>
-        <label for="">Valor a consignar</label>
+        <label class="label-consigdos" for="">Valor a consignar</label>
         <input class="input-consigdos" type="text" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
         <input  class="btnconsignar" type="button" value="Consignar" onclick="consignar()" />
       </form>
     </section>
     <section class="seccionRetirar" id="vistaRetirar">
       <form action="">
-        <h1 class="titulos">Retirar</h1>
+        <h1 class="tituloretirar">Retirar</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
-        <input class="inputretirar" type="text" placeholder="Cuanto desea retirar" id="valorARetirar" />
+        <label class="label-retiral" for="">¿Cuanto desea retirar?</label>
+        <input class="inputretirar" type="text" placeholder="Ingrese la cantidad" id="valorARetirar" />
         <input class="btn-retirar" type="button" value="Retirar" onclick="retirar()"/>
       </form>
     </section>
@@ -59,10 +60,13 @@
       <form action="">
         <h1 class="titulotrans">TRANSFERIR DINERO</h1>
         <img class="img-trans" src="/assets/img/IMG-TRANSFERIR.jpg" alt="logo">
-        <input class="input-trans" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA TRANSFERIR" id="valorTransferir" />
-        <input class="input-transdos" type="text" placeholder="INGRESE EL NUMERO DE CUENTA" id="cuentaTransferir" />
+        <label class="label-trans" for="">¿Cuanto desea transferir?</label>
+        <input class="input-trans" type="text" placeholder="Ingrese la cantidad" id="valorTransferir" />
+        <label class="label-transdos" for="">Ingrese el número de cuenta</label>
+        <input class="input-transdos" type="text" placeholder="Ingrese el número" id="cuentaTransferir" />
+        <label class="label-bancos" for="">Seleccione el banco</label>
         <select class="tipos-bancos" name="listaBancos" id="listaBancos">
-          <option value="">SELECCIONE UNA BANCO</option>
+          <option value=""></option>
           <option value="Bancolombia" id="bancolombia">BANCOLOMBIA</option>
           <option value="Nequi" id="nequi">NEQUI</option>
           <option value="Banco-bogotá" id="banco-bogota">BANCO DE BOGOTÁ</option>
