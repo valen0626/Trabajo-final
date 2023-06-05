@@ -6,28 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/dc0857d4dc.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 
 <body>
   <section class="barra">
     <img class="logotipo" src="/assets/img/logo.PNG" alt="logo">
-    <input class="btn-salir" type="button" value="Cerrar sesión" onclick="salir()" />
+    <input class="btn-salir" type="button" value="CERRAR SESIÓN" onclick="salir()" />
   </section>
-  <nav>
-    <ul>
-      <li><a class="servicios-desplegable" href="#">SERVICIOS</a></li>
-      <section class="servicios-lista">
-
-        <a id="vistaRetirar" href="#">RETIRAR</a>
-        <a id="vistaConsignar" href="#">CONSIGNAR</a>
-        <a id="vistaTransferir" href="#">TRANSFERIR</a>
-        <a id="vistaConsultar" href="#">CONSULTAR SALDO</a>
-      </section>
-      <li><a href="#">HISTORIAL DE MOVIMIENTOS</a></li>
-    </ul>
-  </nav>
-
+  <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa-solid fa-bars" style="color:green;" id="btn-desplegabledos"></i>
+    </label>
+    <section class="desplegabledos">
+        <section>SERVICIOS</section>
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-magnifying-glass-dollar" style="color:green"></i>COSULTAR SALDO</a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-money-bill-transfer" style="color:green"></i>CONSIGNAR</a></li>
+            <li><a href="#"><i class="fa-solid fa-money-bill-wave" style="color:green"></i>RETIRAR</a></li>
+            <li><a href="#"><i class="fa-solid fa-money-check-dollar" style="color:green"></i>TRANSFERIR</a></li>
+            <li><a href="#"><i class="fa-solid fa-boxes-stacked" style="color: green;"></i>HISTORIAL DE MOVIMIENTOS</a></li>
+        </ul>
+    </section>
   <main>
     <section class="seccionOpciones">
       <h1 class="titulo-consult">CONSULTAR SALDO</h1>
@@ -37,7 +38,7 @@
     </section>
     <section class="seccionOpciones">
       <form action="">
-        <h1 class="titulos">CONSIGNAR</h2>
+        <h1 class="titu-consig">CONSIGNAR</h2>
         <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
         <input class="input-consig" type="text" placeholder="INGRESE EL NÚMERO DE CUENTA" id="numeroCuenta" />
         <input class="input-consigdos" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA CONGINAR " id="valorAConsignar" />
@@ -46,7 +47,7 @@
     </section>
     <section class="seccionOpciones">
       <form action="">
-        <h1 class="titulos">RETIRAR</h1>
+        <h1 class="titu-retirar">RETIRAR</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
         <input class="inputretirar" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA RETIRAR" id="valorARetirar" />
         <input class="btn-retirar" type="button" value="RETIRAR" onclick="retirar()"/>

@@ -2,7 +2,7 @@ const main = document.querySelector("main");
 let saldo = 0;
 function consultarSaldo() {
   const texto = document.querySelector("p");
-  texto.textContent = `SU SALDO ES DE: $${saldo}`;
+  texto.textContent = `SU SALDO ES DE : $${saldo}`;
 }
 const salir = () => {
   location.href = "/index.html";
