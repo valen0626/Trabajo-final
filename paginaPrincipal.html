@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/dc0857d4dc.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
 
@@ -13,45 +14,45 @@
     <img class="logotipo" src="/assets/img/logo.PNG" alt="logo">
     <input class="btn-salir" type="button" value="Cerrar sesión" onclick="salir()" />
   </section>
-  <nav>
-    <ul>
-      <li><a class="servicios-desplegable" href="#">SERVICIOS</a></li>
-      <section class="servicios-lista">
-
-        <a href="#" onclick="formularioRetirar()">RETIRAR</a>
-        <a href="#" onclick="formularioConsignar()">CONSIGNAR</a>
-        <a href="#" onclick="formularioTransferir()">TRANSFERIR</a>
-        <a href="#" onclick="verSaldo()">CONSULTAR SALDO</a>
-      </section>
-      <li><a href="#">HISTORIAL DE MOVIMIENTOS</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section class="seccionOpciones" id="vistaConsultar">
-      <h1 class="titulo-consult">CONSULTAR SALDO</h1>
-      <img class="img-consult" src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
-      <p id="verSaldo"></p>
-      <input class="btonconsult" type="button" value="Consultar" onclick="consultarSaldo()" />
+  <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa-solid fa-bars" id="btn-desplegabledos"></i>
+    </label>
+    <section class="desplegabledos">
+        <section>SERVICIOS</section>
+        <ul>
+            <li><a href="#" onclick="verSaldo()"><i class="fa-solid fa-magnifying-glass-dollar" style="color:green"></i>COSULTAR SALDO</a></li>
+            <li><a href="#" onclick="seccionConsignar()"><i class="fa-sharp fa-solid fa-money-bill-transfer" style="color:green"></i>CONSIGNAR</a></li>
+            <li><a href="#" onclick="seccionRetirar()"><i class="fa-solid fa-money-bill-wave" style="color:green"></i>RETIRAR</a></li>
+            <li><a href="#" onclick="seccionTransferir()"><i class="fa-solid fa-money-check-dollar" style="color:green"></i>TRANSFERIR</a></li>
+            <li><a href="#"><i class="fa-solid fa-boxes-stacked" style="color: green;"></i>HISTORIAL DE MOVIMIENTOS</a></li>
+        </ul>
     </section>
-    <section class="seccionOpciones" id="vistaConsignar">
+  <main>
+    <section class="seccionConsultar" id="vistaConsultar">
+      <img src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
+      <h1 class="titulo-consult" id="saludoSaldo"></h1>
+      <p id="verSaldo">$0,00</p>
+      <input class="btonconsult" type="button" value="Actualizar" onclick="consultarSaldo()" />
+    </section>
+    <section class="seccionConsignar" id="vistaConsignar">
       <form action="">
         <h1 class="titulos">CONSIGNAR</h2>
         <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
-        <input class="input-consig" type="text" placeholder="INGRESE EL NÚMERO DE CUENTA" id="numeroCuenta" />
-        <input class="input-consigdos" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA CONGINAR " id="valorAConsignar" />
-        <input class="btnconsignar" type="button" value="CONSIGNAR" onclick="consignar()" />
+        <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="numeroCuenta" name="numeroCuenta"/>
+        <input class="input-consigdos" type="text" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
+        <input  class="btnconsignar" type="button" value="CONSIGNAR" onclick="consignar()" />
       </form>
     </section>
-    <section class="seccionOpciones" id="vistaRetirar">
+    <section class="seccionRetirar" id="vistaRetirar">
       <form action="">
-        <h1 class="titulos">RETIRAR</h1>
+        <h1 class="titulos">Retirar</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
-        <input class="inputretirar" type="text" placeholder="INGRESE LA CANTIDAD QUE DESEA RETIRAR" id="valorARetirar" />
-        <input class="btn-retirar" type="button" value="RETIRAR" onclick="retirar()"/>
+        <input class="inputretirar" type="text" placeholder="Cuanto desea retirar" id="valorARetirar" />
+        <input class="btn-retirar" type="button" value="Retirar" onclick="retirar()"/>
       </form>
     </section>
-    <section class="seccionOpciones-trans" id="vistaTransferir">
+    <section class="seccionTransferir" id="vistaTransferir">
       <form action="">
         <h1 class="titulotrans">TRANSFERIR DINERO</h1>
         <img class="img-trans" src="/assets/img/IMG-TRANSFERIR.jpg" alt="logo">
@@ -69,7 +70,6 @@
     </section>
   </main>
 
-  <script src="./assets/js/movimientos.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
-
 </html>

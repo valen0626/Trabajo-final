@@ -12,6 +12,12 @@ main {
     align-items: center;
     flex-wrap: wrap;
 }
+p{
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;   
+}
+
 
 h1 {
     font-weight: bolder;
@@ -102,16 +108,18 @@ body {
 }
 
 .btn-salir {
-    width: 150px;
+    width: 180px;
     height: 40px;
     background-color: green;
     border-radius: 10px;
-    color: white;
-    font-size: 17px;
     border-color: transparent;
     float: right;
     margin: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
 }
+
 
 .btn-salir:hover {
     color: green;
@@ -123,56 +131,176 @@ body {
     height: 90px;
 }
 
-nav {
-    height: 570px;
-    width: 200px;
-    background-color: white;
-    float: left;
-}
-
-ul a {
-    text-decoration: none;
-}
-
-li {
-    height: 40px;
-}
-
-li:hover {
-    background-color: green;
-    color: white;
-}
-
-.seccionOpciones {
-    display: flex;
+.seccionConsultar{
     flex-direction: column;
-    width: 30%;
-    height: 100px;
-    padding: 100px;
+    width: 45%;
+    height: 150px;
+    padding: 200px;
     margin: 20px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
     align-items: center;
     justify-content: center;
+    display: none;
+    text-align: justify;
 }
-
+.seccionConsultar img{
+    width: 100px;
+    height: 70px;
+}
+.seccionConsultar input{
+    width: 150px;
+    height: 70px;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;
+    float: right;
+    margin: 10px;
+}
+.seccionConsultar input:hover{
+    color: green;
+    background-color: white;
+    border-color: green;
+}
+.seccionConsignar{
+    flex-direction: column;
+    width: 45%;
+    height: 150px;
+    padding: 200px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px green;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.titu-consig{
+    background-color: green;
+    width: 300px;
+    margin-top: -40px;
+    margin-left: 90px;
+    text-align: center;
+    color: white;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+.seccionConsignar img{
+    width: 70px;
+    height: 45px;
+}
+.seccionRetirar{
+    flex-direction: column;
+    width: 45%;
+    height: 150px;
+    padding: 200px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px green;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
 .inputretirar {
     align-items: center;
     text-align: center;
     justify-content: center;
     padding: 5px;
     margin-top: 25px;
-    width: 350px;
+    width: 430px;
     border-radius: 10px;
     border: solid 2px black;
 }
-
+.seccionTransferir{
+    flex-direction: column;
+    width: 45%;
+    height: 150px;
+    padding: 200px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px green;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.titulotrans{
+    background-color: green;
+    width: 300px;
+    margin-top: 10px;
+    margin-top: -10px;
+    margin-left: 100px;
+    text-align: center;
+    color: white;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+.input-trans{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 20px;
+    width: 450px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+.input-transdos{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 0.02px;
+    width: 450px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+.tipos-bancos{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 60px;
+    width: 350px;
+    border-radius: 10px;
+    border: solid 2px black;    
+}
+.btn-trans{
+    padding: 5px;
+    width: 160px;
+    margin-top: 20px;
+    margin-left: 160px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;  
+}
+.tipos-bancos:hover{
+    color:green;
+    background-color: white;
+    border-color: green;
+}
+.img-trans{
+    width: 110px;
+    height: 110px;
+    margin-left: 190px;
+    margin-top: 20px;
+    border-radius: 100px;
+    border: solid 2px black;
+}
 .titulos{
     background-color: green;
     width: 300px;
-    margin-top: 20px;
-    margin-left: 40px;
+    margin-top: -60px;
+    margin-left: 70px;
     text-align: center;
     color: white;
     border: solid 2px black;
@@ -182,15 +310,16 @@ li:hover {
 .imgretirar {
     width: 110px;
     height: 110px;
-    margin-top: 10px;
-    margin-left: 135px;
+    margin-top: 30px;
+    margin-left: 170px;
     border-radius: 100px;
     border: solid 2px black;
 }
 .btn-retirar {
     padding: 5px;
     width: 160px;
-    margin-left: 110px;
+    margin-left: 145px;
+    margin-top: 30px;
     cursor: pointer;
     font-weight: bold;
     background-color: green;
@@ -203,4 +332,139 @@ li:hover {
     color: green;
     background-color: white;
     border-color: green;
+}
+.input-consig{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 30px;
+    width: 430px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+.input-consigdos{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5px;
+    width: 430px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+.img-consignar{
+    width: 110px;
+    height: 110px;
+    margin-top: 30px;
+    margin-left: 190px;
+    border-radius: 100px;
+    border: solid 2px black;
+}
+.btnconsignar{
+    padding: 5px;
+    width: 160px;
+    margin-left: 170px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;
+}
+
+.btnconsignar:hover{
+    color: green;
+    background-color: white;
+    border-color: green;
+}
+.desplegabledos{
+    position: fixed;
+    left: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    transition: all .5s ease;
+    border-radius: 20px;
+    border: solid 2px green;
+}
+
+.desplegabledos section{
+    font-size: 20px;
+    color: green;
+    text-align: center;
+    line-height: 70px;
+    background-color: white;
+    user-select: none;
+    border-radius: 16px;
+
+}
+
+.desplegabledos ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    font-size: 20px;
+    color: green;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    transition: .2s;
+}
+
+ul li:hover a{
+    padding-left: 50px;
+}
+
+
+ul li a:hover{
+    background-color: lightgray;
+}
+
+.desplegabledos ul a i{
+    margin-right: 16px;
+}
+
+#check{
+    display:none;
+}
+
+label #btn-desplegabledos{
+    position:absolute;
+    cursor: pointer;
+    background-color: white;
+    border: solid 3px green;
+    border-radius: 10px ;
+    top: 10px;
+    left: 150px;
+    font-size: 20px;
+    padding: 15px 15px;
+    animation-name: mover;
+    animation-duration: .5s;
+}
+
+
+#check:checked ~ .desplegabledos{
+    left: 0;
+}
+
+#check:checked ~ #btn-desplegabledos{
+    left: 250px;
+    opacity: 0;
+}
+
+#btn-desplegabledos:hover{
+    color: green;
+    background-color: lightgrey;
+    border-color: green;
+}
+.correcto{
+    background-color: green;
+}
+.incorrecto{
+    background-color: red;
 }
