@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/dc0857d4dc.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
@@ -15,20 +18,21 @@
     <input class="btn-salir" type="button" value="Cerrar sesión" onclick="salir()" />
   </section>
   <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fa-solid fa-arrow-right" id="flecha"></i>
-      <i class="fa-solid fa-arrow-left-long" id="cancel"></i>
-    </label>
-    <section class="desplegable">
-        <header>SERVICIOS</header>
-        <ul>
-            <li><a href="#" onclick="verSaldo()"><i class="fa-solid fa-magnifying-glass-dollar" ></i>COSULTAR SALDO</a></li>
-            <li><a href="#" onclick="seccionConsignar()"><i class="fa-sharp fa-solid fa-money-bill-transfer"></i>CONSIGNAR</a></li>
-            <li><a href="#" onclick="seccionRetirar()"><i class="fa-solid fa-money-bill-wave" ></i>RETIRAR</a></li>
-            <li><a href="#" onclick="seccionTransferir()"><i class="fa-solid fa-money-check-dollar" ></i>TRANSFERIR</a></li>
-            <li><a href="#"><i class="fa-solid fa-boxes-stacked" ></i>HISTORIAL DE MOVIMIENTOS</a></li>
-        </ul>
-    </section>
+  <label for="check">
+    <i class="fa-solid fa-arrow-right" id="flecha"></i>
+    <i class="fa-solid fa-arrow-left-long" id="cancel"></i>
+  </label>
+  <section class="desplegable">
+    <header>SERVICIOS</header>
+    <ul>
+      <li><a href="#" onclick="verSaldo()"><i class="fa-solid fa-magnifying-glass-dollar"></i>COSULTAR SALDO</a></li>
+      <li><a href="#" onclick="seccionConsignar()"><i class="fa-sharp fa-solid fa-money-bill-transfer"></i>CONSIGNAR</a>
+      </li>
+      <li><a href="#" onclick="seccionRetirar()"><i class="fa-solid fa-money-bill-wave"></i>RETIRAR</a></li>
+      <li><a href="#" onclick="seccionTransferir()"><i class="fa-solid fa-money-check-dollar"></i>TRANSFERIR</a></li>
+      <li><a href="#"><i class="fa-solid fa-boxes-stacked"></i>HISTORIAL DE MOVIMIENTOS</a></li>
+    </ul>
+  </section>
   <main>
     <section class="seccionConsultar" id="vistaConsultar">
       <img src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
@@ -37,14 +41,46 @@
       <input class="btonconsult" type="button" value="Actualizar" onclick="consultarSaldo()" />
     </section>
     <section class="seccionConsignar" id="vistaConsignar">
-      <form action="" >
+      <form action="">
         <h1 class="titu-consig">Consignar</h2>
-        <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
-        <label for="">Numero de cuenta</label>
-        <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="cuentaConsignar" name="cuentaConsignar"/>
-        <label for="">Valor a consignar</label>
-        <input class="input-consigdos" type="text" value="$" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
-        <input  class="btnconsignar" type="button" value="Consignar" onclick="consignar()" />
+          <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
+          <label for="">Numero de cuenta</label>
+          <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="cuentaConsignar"
+            name="cuentaConsignar" />
+          <label for="">Valor a consignar</label>
+          <input class="input-consigdos" type="text" placeholder="Ingrese el valor a consignar "
+            id="valorAConsignar" name="valorAConsignar" />
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            onclick="consignar()">
+            Aceptar
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                  <h3>¡Consignación éxitosa!</h3>
+                  <h4>Valor consignado </h4>
+                  <p id="pValorConsignado"></p>
+                  <h4>Numero de cuenta</h4>
+                  <p id="pCuentaConsignado"></p>
+                  <h4>Fecha </h4>
+                  <p id="pFechaConsignado"></p>
+                </div>
+                <div class="modal-footer">
+                  <button id="botonCerrar" type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </form>
     </section>
     <section class="seccionRetirar" id="vistaRetirar">
@@ -52,8 +88,34 @@
         <h1 class="tituloretirar">Retirar</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
         <label for="">Valor a retirar</label>
-        <input class="inputretirar" name="inputretirar" type="text" value="$" placeholder="Cuanto desea retirar" id="valorARetirar" />
-        <input class="btn-retirar" type="button" value="Retirar" onclick="retirar()"/>
+        <input class="inputretirar" name="inputretirar" type="text" placeholder="Cuanto desea retirar"
+          id="valorARetirar" />
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
+        onclick="retirar()">
+            Aceptar
+          </button>
+          <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                  <h3>¡Retiro éxitoso!</h3>
+                  <h4>Valor retirado </h4>
+                  <p id="pValorRetirado"></p>
+                  <h4>Fecha </h4>
+                  <p id="pFechaRetirado"></p>
+                </div>
+                <div class="modal-footer">
+                  <button id="botonCerrar" type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </form>
     </section>
     <section class="seccionTransferir" id="vistaTransferir">
@@ -61,8 +123,9 @@
         <h1 class="titulotrans">TRANSFERIR DINERO</h1>
         <img class="img-trans" src="/assets/img/IMG-TRANSFERIR.jpg" alt="logo">
         <label for="">Ingrese el valor a transferir</label>
-        <input class="input-trans" type="text" value="$" id="valorTransferir" name="valorTransferir" />
-        <input class="input-transdos" type="text" placeholder="Ingrese el número de cuenta" id="cuentaTransferir" name="cuentaTransferir"/>
+        <input class="input-trans" type="text" id="valorTransferir" name="valorTransferir" />
+        <input class="input-transdos" type="text" placeholder="Ingrese el número de cuenta" id="cuentaTransferir"
+          name="cuentaTransferir" />
         <select class="tipos-bancos" name="listaBancos" id="listaBancos">
           <option value=""></option>
           <option value="Bancolombia" id="bancolombia">BANCOLOMBIA</option>
@@ -70,11 +133,47 @@
           <option value="Banco-bogotá" id="banco-bogota">BANCO DE BOGOTÁ</option>
           <option value="BBVA" id="bbva">BBVA COLOMBIA</option>
         </select>
-        <input class="btn-trans" type="button" value="TRANSFERIR" onclick="transferir()" />
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
+        onclick="transferir()">
+            Aceptar
+          </button>
+          <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                  <h3>¡Transferencia éxitosa!</h3>
+                  <h4>Valor Transferido </h4>
+                  <p id="pValorTransferido"></p>
+                  <h4>Numero de cuenta </h4>
+                  <p id="pCuentaTransferido"></p>
+                  <h4>Banco </h4>
+                  <p id="pBancoTransferido"></p>
+                  <h4>Fecha </h4>
+                  <p id="pFechaTransferido"></p>
+                </div>
+                <div class="modal-footer">
+                  <button id="botonCerrar" type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </form>
+    </section>
+    <section id="historialConsultas">
+
     </section>
   </main>
 
   <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

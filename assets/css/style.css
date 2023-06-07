@@ -70,6 +70,15 @@ h1 {
     font-size: 17px;
     border-color: transparent;
 }
+.modal{
+    width: 30%; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.modal-body p{
+    font-weight: normal;
+}
 
 .login .btn:hover {
     background-color: white;

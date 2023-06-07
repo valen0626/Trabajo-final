@@ -57,7 +57,7 @@ const validarUsuario = () => {
 
 const expresiones = {
   numeros: /^-?\d+\.?\d*$/m,
-  dinero: /(?:[$]+[ ]?(?:(?:[0-9]{1,3}[ \.,]?)*[ \.,]?[0-9]+)(?: million[s]?| billion[s]?| dollar[s]?)+)|(?:[$]+[ ]?(?:[0-9]{1,3}[ \.,]?)*[ \.,]?[0-9]+)|(?:(?:(?:[0-9]{1,3}[ \.,]?)*[ \.,]?[0-9]+)(?: million[s]?| billion[s]?| dollar[s]?)+)/g
+  dinero: /^((\d+)|(\d{1,3}(\.\d{3})+)|(\d{1,3}(\.\d{3})(\,\d{3})+))(\,\d{2})?$/gm
 }
 function validarFormulario(e) {
   switch (e.target.name) {
@@ -133,21 +133,25 @@ const seccionConsignar = () => {
 
   inputs.forEach((input) => {
     input.addEventListener('keydown', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
   });
 }
+
 const consignar = () => {
   const valorAConsignar = document.querySelector("#valorAConsignar");
   const cuentaConsignar = document.querySelector("#cuentaConsignar");
-  const consignarHecho = document.createElement("section");
+  const pFechaConsignado = document.querySelector('#pFechaConsignado')
+  const pValorConsignado = document.querySelector('#pValorConsignado')
+  const pCuentaConsignado = document.querySelector('#pCuentaConsignado')
   const nuevaFecha = new Date();
-  consignarHecho.classList.add("comprobante");
-  consignarHecho.innerHTML += `<h1>!Consignación éxitosa¡</h1>
-    <p><h2>Numero de cuenta: </h2>${numeroCuenta.value}</p>
-    <p><h2>Valor Consignado: </h2>${valorAConsignar.value}</p>
-    <p><h2>Fecha: </h2>${nuevaFecha}</p>`;
-  main.append(consignarHecho);
+  pCuentaConsignado.textContent = `${cuentaConsignar.value}`
+  pValorConsignado.textContent = `$${valorAConsignar.value}`
+  pFechaConsignado.textContent = `${nuevaFecha}`
+  valorAConsignar.value =''
+  cuentaConsignar.value =''
   saldo += parseInt(valorAConsignar.value);
 };
+ 
 
 const seccionRetirar = () => {
   vistaRetirar.style.display = 'flex'
@@ -156,21 +160,21 @@ const seccionRetirar = () => {
   vistaTransferir.style.display = 'none'
   inputs.forEach((input) => {
     input.addEventListener('keydown', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
   });
 }
 const retirar = () => {
   const valorARetirar = document.querySelector("#valorARetirar");
-  const retirarHecho = document.createElement("section");
+  const pFechaRetirado = document.querySelector('#pFechaRetirado')
+  const pValorRetirado = document.querySelector('#pValorRetirado')
   const nuevaFecha = new Date();
-  retirarHecho.classList.add("comprobante");
   if (parseInt(valorARetirar.value) <= saldo) {
     saldo -= parseInt(valorARetirar.value);
-    retirarHecho.innerHTML += `<h1>!Retiro éxitoso¡</h1>
-    <p><h2>Valor retirado: </h2>${valorARetirar.value}</p>
-    <p><h2>Fecha: </h2>${nuevaFecha}</p>`;
-    main.append(retirarHecho);
+    pValorRetirado.textContent = `$${valorARetirar.value}`
+    pFechaRetirado.textContent = `${nuevaFecha}`
+    valorARetirar.value=''
   } else if (parseInt(valorARetirar.value) > saldo) {
-    alert("!Saldo insuficiente¡");
+    alert("¡Saldo insuficiente!");
     valorARetirar.value = "";
   }
 };
@@ -182,26 +186,29 @@ const seccionTransferir = () => {
   vistaConsultar.style.display = 'none'
   inputs.forEach((input) => {
     input.addEventListener('keydown', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
   });
 }
 const transferir = () => {
   const valorTransferir = document.querySelector("#valorTransferir");
   const cuentaTransferir = document.querySelector("#cuentaTransferir")
-  const transferirHecho = document.createElement("section");
+  const pFechaTransferido = document.querySelector('#pFechaTransferido')
+  const pValorTransferido = document.querySelector('#pValorTransferido')
+  const pCuentaTransferido = document.querySelector('#pCuentaTransferido')
+  const pBancoTransferido = document.querySelector('#pBancoTransferido')
   const nuevaFecha = new Date();
   const seleccionar = document.querySelector('#listaBancos')
   const opciones = seleccionar.options[seleccionar.selectedIndex];
-  transferirHecho.classList.add("comprobante");
   if (parseInt(valorTransferir.value) <= saldo) {
     saldo -= parseInt(valorTransferir.value);
-    transferirHecho.innerHTML += `<h1>!Transferencia éxitosa¡</h1>
-      <h2>Numero de cuenta: </h2><p>${cuentaTransferir.value}</p>
-      <h2>Banco: </h2><p>${opciones.text}</p>
-      <h2>Valor transferido: </h2><p>${valorTransferir.value}</p>
-      <h2>Fecha: </h2><p>${nuevaFecha}</p>`;
-    main.append(transferirHecho);
+    pValorTransferido.textContent = `$${valorTransferir.value}`
+    pFechaTransferido.textContent=`${nuevaFecha}`
+    pBancoTransferido.textContent =`${opciones.text}`
+    pCuentaTransferido.textContent=`${cuentaTransferir.value}`
+    valorTransferir.value=''
+    cuentaTransferir.value=''
   } else if (parseInt(valorTransferir.value) > saldo) {
-    alert("!Saldo insuficiente¡");
+    alert("¡Saldo insuficiente!");
     valorTransferir.value = "";
   }
 };
