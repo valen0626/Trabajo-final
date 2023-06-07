@@ -141,10 +141,10 @@ const consignar = () => {
   const consignarHecho = document.createElement("section");
   const nuevaFecha = new Date();
   consignarHecho.classList.add("comprobante");
-  consignarHecho.innerHTML += `<h1>!Consignación éxitosa¡</h1>
-    <p><h2>Numero de cuenta: </h2>${numeroCuenta.value}</p>
-    <p><h2>Valor Consignado: </h2>${valorAConsignar.value}</p>
-    <p><h2>Fecha: </h2>${nuevaFecha}</p>`;
+  consignarHecho.innerHTML += `<h4>!Consignación éxitosa¡</h4>
+    <p><h4>Numero de cuenta: </h4>${cuentaConsignar.value}</p>
+    <p><h4>Valor Consignado: </h4>${valorAConsignar.value}</p>
+    <p><h4>Fecha: </h4>${nuevaFecha}</p>`;
   main.append(consignarHecho);
   saldo += parseInt(valorAConsignar.value);
 };
@@ -165,9 +165,9 @@ const retirar = () => {
   retirarHecho.classList.add("comprobante");
   if (parseInt(valorARetirar.value) <= saldo) {
     saldo -= parseInt(valorARetirar.value);
-    retirarHecho.innerHTML += `<h1>!Retiro éxitoso¡</h1>
-    <p><h2>Valor retirado: </h2>${valorARetirar.value}</p>
-    <p><h2>Fecha: </h2>${nuevaFecha}</p>`;
+    retirarHecho.innerHTML += `<h4>!Retiro éxitoso¡</h4>
+    <p><h4>Valor retirado: </h4>${valorARetirar.value}</p>
+    <p><h4>Fecha: </h4>${nuevaFecha}</p>`;
     main.append(retirarHecho);
   } else if (parseInt(valorARetirar.value) > saldo) {
     alert("!Saldo insuficiente¡");
@@ -194,11 +194,11 @@ const transferir = () => {
   transferirHecho.classList.add("comprobante");
   if (parseInt(valorTransferir.value) <= saldo) {
     saldo -= parseInt(valorTransferir.value);
-    transferirHecho.innerHTML += `<h1>!Transferencia éxitosa¡</h1>
-      <h2>Numero de cuenta: </h2><p>${cuentaTransferir.value}</p>
-      <h2>Banco: </h2><p>${opciones.text}</p>
-      <h2>Valor transferido: </h2><p>${valorTransferir.value}</p>
-      <h2>Fecha: </h2><p>${nuevaFecha}</p>`;
+    transferirHecho.innerHTML += `<h3>!Transferencia éxitosa¡</h3>
+      <h4>Numero de cuenta: </h5><p>${cuentaTransferir.value}</p>
+      <h4>Banco: </h5><p>${opciones.text}</p>
+      <h4>Valor transferido: </h4><p>${valorTransferir.value}</p>
+      <h4>Fecha: </h4><p>${nuevaFecha}</p>`;
     main.append(transferirHecho);
   } else if (parseInt(valorTransferir.value) > saldo) {
     alert("!Saldo insuficiente¡");

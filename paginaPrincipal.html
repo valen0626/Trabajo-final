@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/dc0857d4dc.js" crossorigin="anonymous"></script>
   <title>Document</title>
 </head>
@@ -17,19 +18,19 @@
   <input type="checkbox" id="check">
     <label for="check">
       <i class="fa-solid fa-arrow-right" id="flecha"></i>
-      <i class="fa-solid fa-arrow-left-long" id="cancel"></i>
+      <i class="fa-solid fa-arrow-left-long" id="cancelar"></i>
     </label>
-    <section class="desplegable">
+    <section class="desple">
         <header>SERVICIOS</header>
         <ul>
-            <li><a href="#" onclick="verSaldo()"><i class="fa-solid fa-magnifying-glass-dollar" ></i>COSULTAR SALDO</a></li>
-            <li><a href="#" onclick="seccionConsignar()"><i class="fa-sharp fa-solid fa-money-bill-transfer"></i>CONSIGNAR</a></li>
-            <li><a href="#" onclick="seccionRetirar()"><i class="fa-solid fa-money-bill-wave" ></i>RETIRAR</a></li>
-            <li><a href="#" onclick="seccionTransferir()"><i class="fa-solid fa-money-check-dollar" ></i>TRANSFERIR</a></li>
-            <li><a href="#"><i class="fa-solid fa-boxes-stacked" ></i>HISTORIAL DE MOVIMIENTOS</a></li>
+            <li><a href="#" onclick="verSaldo()"><i class="fa-solid fa-magnifying-glass-dollar" ></i>Consultar Saldo</a></li>
+            <li><a href="#" onclick="seccionConsignar()"><i class="fa-sharp fa-solid fa-money-bill-transfer"></i>Consignar</a></li>
+            <li><a href="#" onclick="seccionRetirar()"><i class="fa-solid fa-money-bill-wave" ></i>Retirar</a></li>
+            <li><a href="#" onclick="seccionTransferir()"><i class="fa-solid fa-money-check-dollar" ></i>Transferir</a></li>
+            <li><a href="#"><i class="fa-solid fa-boxes-stacked" ></i>Movimientos</a></li>
         </ul>
-    </section>
-  <main>
+      </section>
+    <main>  
     <section class="seccionConsultar" id="vistaConsultar">
       <img src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
       <h1 class="titulo-consult" id="saludoSaldo"></h1>
@@ -38,43 +39,69 @@
     </section>
     <section class="seccionConsignar" id="vistaConsignar">
       <form action="" >
-        <h1 class="titu-consig">Consignar</h2>
-        <img class="img-consignar" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
-        <label for="">Numero de cuenta</label>
+        <h1 class="titu-consig">Consignar</h1>
+        <img class="img-consing" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
+        <label class="label-consing" for="">Numero de cuenta</label>
         <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="cuentaConsignar" name="cuentaConsignar"/>
-        <label for="">Valor a consignar</label>
+        <label class="label-consingdos" for="">Valor a consignar</label>
         <input class="input-consigdos" type="text" value="$" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
-        <input  class="btnconsignar" type="button" value="Consignar" onclick="consignar()" />
+        <!-- <input class="boton-modal" type="checkbox" id="btn-modal" onclick="consignar()"/> -->
+        <!-- Button trigger modal -->
+<button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="consignar()">
+  Aceptar
+</button>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
+        <button id="botonEquis-Comprobante" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+     
+      </div>
+      <div class="modal-footer">
+        <button id="botonCerrar-Comprobante"type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
       </form>
     </section>
     <section class="seccionRetirar" id="vistaRetirar">
       <form action="">
         <h1 class="tituloretirar">Retirar</h1>
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
-        <label for="">Valor a retirar</label>
-        <input class="inputretirar" name="inputretirar" type="text" value="$" placeholder="Cuanto desea retirar" id="valorARetirar" />
+        <label class="label-retirar" for="">Valor a retirar</label>
+        <input class="inputretirar" name="inputretirar" type="text" value="$" placeholder="Ingrese el valor" id="valorARetirar" />
         <input class="btn-retirar" type="button" value="Retirar" onclick="retirar()"/>
       </form>
     </section>
-    <section class="seccionTransferir" id="vistaTransferir">
+    <section class="secciontrans" id="vistaTransferir">
       <form action="">
-        <h1 class="titulotrans">TRANSFERIR DINERO</h1>
+        <h1 class="titulo-trans">Transferir Dinero</h1>
         <img class="img-trans" src="/assets/img/IMG-TRANSFERIR.jpg" alt="logo">
-        <label for="">Ingrese el valor a transferir</label>
+        <label class="label-trans" for="">Ingrese el valor a transferir</label>
         <input class="input-trans" type="text" value="$" id="valorTransferir" name="valorTransferir" />
-        <input class="input-transdos" type="text" placeholder="Ingrese el número de cuenta" id="cuentaTransferir" name="cuentaTransferir"/>
+        <label class="label-transdos" for="">Ingrese el número de cuenta</label>
+        <input class="input-transdos" type="text" placeholder="Ingrese el número" id="cuentaTransferir" name="cuentaTransferir"/>
+        <label class="label-bancos" for="">Seleccione el banco</label>
         <select class="tipos-bancos" name="listaBancos" id="listaBancos">
           <option value=""></option>
-          <option value="Bancolombia" id="bancolombia">BANCOLOMBIA</option>
-          <option value="Nequi" id="nequi">NEQUI</option>
-          <option value="Banco-bogotá" id="banco-bogota">BANCO DE BOGOTÁ</option>
-          <option value="BBVA" id="bbva">BBVA COLOMBIA</option>
-        </select>
+          <option value="Bancolombia" id="bancolombia">Bancolombia</option>
+          <option value="Nequi" id="nequi">Nequi</option>
+          <option value="Banco-bogotá" id="banco-bogota">Banco de Bogotá</option>
+          <option value="BBVA" id="bbva">BBVA Colombia</option>
         <input class="btn-trans" type="button" value="TRANSFERIR" onclick="transferir()" />
       </form>
     </section>
   </main>
 
+
   <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
