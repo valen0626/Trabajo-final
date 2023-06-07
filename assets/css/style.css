@@ -1,23 +1,29 @@
-body {
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
     background-image: url(/assets/img/fondo.png);
     background-size: 100%;
     font-family: sans-serif;
 }
-
-main {
+p{
+font-weight: bold;
+font-size: 20px;
+}
+#saludoSaldo{
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+main{
     display: flex;
     justify-content: center;
     margin-top: 110px;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: center; 
 }
-p{
-    margin-top: 30px;
-    font-size: 18px;
-    font-weight: bold;   
-}
-
 
 h1 {
     font-weight: bolder;
@@ -87,15 +93,15 @@ h1 {
 }
 
 .comprobante {
-    display: flex;
-    flex-direction: column;
-    height: 180px;
-    padding: 150px;
+    flex-wrap: wrap;
+    height: 50px;
+    padding: 200px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 
@@ -144,7 +150,7 @@ cursor: pointer;
     width: 45%;
     height: 90px;
     padding: 200px;
-    margin: -50px;
+    margin: -60px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
@@ -152,9 +158,10 @@ cursor: pointer;
     justify-content: center;
     display: none;
     text-align: justify;
+    transition: all .5s ease;
 }
 .seccionConsultar img{
-    margin-top: -50px;
+    margin-top: 10px;
     width: 100px;
     height: 100px;
     border-radius: 100px;
@@ -171,23 +178,19 @@ cursor: pointer;
     float: right;
     margin-top: 50px;
 }
-.seccionConsultar input:hover{
-    color: green;
-    background-color: white;
-    border-color: green;
-}
+
 .seccionConsignar{
     align-items: center;
     justify-content: center;
     width: 45%;
-    height: 400px;
-    padding: 50px;
-    margin-top: -40px;
+    height: 430px;
+    margin-top: -60px;
     margin-left: 20px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
     display: none;
+    transition: all .5s ease;
 }
 .titu-consig{
     justify-content: center;
@@ -195,12 +198,14 @@ cursor: pointer;
     background-color: green;
     width: 300px;
     height: 25px;
-    margin-top: -10px;
-    margin-left: 28px;
+    margin-top: 10px;
+    margin-left: 30px;
     color: white;
     border: 0;
     border-radius: 10px;
     font-size: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .input-consig, .input-consigdos{
     border: none;
@@ -208,90 +213,98 @@ cursor: pointer;
     align-items: center;
     justify-content: center;
     width: 250px;
-    padding: 5px;
     font-size: 15px;    
     margin-left: 50px;
+    margin-bottom: 10px;
     outline: none;
+    display: flex;
+    flex-direction: column;
 }
-.label-consig{
-   margin-top: 30px;
-   margin-left: 50px;
-   font-weight: bold;
-}
-.label-consigdos{
-   margin-top: 30px;
-   margin-left: 50px;
-   font-weight: bold;
-}
-
-.seccionConsignar img{
+.img-consing{
     width: 100px;
     height: 100px;
     margin-top: 20px;
     margin-left: 130px;
     border-radius: 100px;
     border: solid 2px black;
-}
-.seccionRetirar{
+    display: flex;
     flex-direction: column;
-    width: 45%;
-    height: 150px;
-    padding: 200px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 10px;
-    border: solid 2px green;
-    align-items: center;
-    justify-content: center;
-    display: none;
 }
-.inputretirar {
-    align-items: center;
-    text-align: left;
-    justify-content: center;
+#boton-consig{
     padding: 5px;
-    margin-top: 25px;
-    width: 200px;
-    border: none;
-    outline: none;
-    border-bottom: 2px black solid;
+    width: 160px;
+    margin-left: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border-color: transparent;
 }
-.seccionTransferir {
-    align-items: center;
-    justify-content: center;
-    width: 45%;
-    height: 150px;
-    padding: 200px;
-    margin: 20px;
+.btnconsignar:hover{
+    color: green;
+    background-color: white;
+    border-color: green;
+}
+.label-consing{
+   margin-top: 30px;
+   margin-left: 50px;
+   margin-bottom: 20px;
+   font-weight: bold;
+   display: flex;
+   flex-direction: column;
+ }
+ .label-consingdos{
+   margin-top: 20px;
+   margin-left: 50px;
+   margin-bottom: 10px;
+   font-weight: bold;
+   display: flex;
+   flex-direction: column;
+ }
+
+.secciontrans {
+    width: 40%;
+    height: 230px;
+    padding: 250px;
+    margin-top: -110px;
+    margin-left: -50px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
-    display: none;
-}
-.seccionTransferir form{
     align-items: center;
     justify-content: center;
+    display: none;
+    transition: all .5s ease;
 }
-.titulotrans{
+
+.titulo-trans{
     background-color: green;
     width: 300px;
-    margin-top: -10px;
+    height: -200px;
+    font-size: 20px;
+    margin-top: 10px;
     margin-left: 25px;
     text-align: center;
     color: white;
     border: solid 2px black;
     border-radius: 10px;
+    background-repeat: no-repeat;
 }
+
 .input-trans, .input-transdos{
     align-items: center;
-    text-align: left;
     justify-content: center;
-    padding: 5px;
-    margin-top: 20px;
-    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    width: 240px;
     border: none;
-    border-bottom: 2px black solid;
     outline: none;
+    border-bottom: solid 2px black;
+    background-repeat: no-repeat;
 }
 
 .tipos-bancos{
@@ -299,12 +312,21 @@ cursor: pointer;
     text-align: center;
     justify-content: center;
     padding: 5px;
-    margin-top: 20px;
     margin-left: 60px;
     width: 240px;
     outline: none;
     border: none;
     border-bottom: solid 2px black;    
+    background-repeat: no-repeat;
+}
+.img-trans{
+    width: 110px;
+    height: 110px;
+    margin-left: 120px;
+    margin-top: 10px;
+    border-radius: 100px;
+    border: solid 2px black;
+    background-repeat: no-repeat;
 }
 .btn-trans{
     padding: 5px;
@@ -318,6 +340,7 @@ cursor: pointer;
     color: white;
     font-size: 17px;
     border-color: transparent;  
+    background-repeat: no-repeat;
 }
 .btn-trans:hover{
     color:green;
@@ -331,10 +354,11 @@ cursor: pointer;
     font-weight: bold;
 }
 .label-transdos{
-    margin-top: 20px;
+    margin-top:-200px;
     margin-left: 60px;
     font-size: 15px;
     font-weight: bold;
+    background-repeat: no-repeat;
 }
 .label-bancos{
     margin-top: 20px;
@@ -347,7 +371,7 @@ cursor: pointer;
     width: 45%;
     height: 150px;
     padding: 180px;
-    margin-top: -40px;
+    margin-top: -60px;
     margin-left: 20px;
     background-color: white;
     border-radius: 10px;
@@ -355,24 +379,27 @@ cursor: pointer;
     align-items: center;
     justify-content: center;
     display: none;
+    transition: all .5s ease;
 }
 .inputretirar {
     align-items: center;
-    text-align: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 80px;
     width: 220px;
     border: none;
     border-bottom: solid 2px black;
     outline: none;
-    
+    display: flex;
+    flex-direction: column;
 }
 .tituloretirar{
     background-color: green;
     width: 300px;
-    margin-top: -20px;
+    height: -200px;
+    margin-top: -10px;
     margin-left: 35px;
+    font-size:20px ;
     text-align: center;
     color: white;
     border: solid 2px black;
@@ -382,8 +409,8 @@ cursor: pointer;
 .imgretirar {
     width: 110px;
     height: 110px;
-    margin-top: 20px;
-    margin-left: 130px;
+    margin-top: 10px;
+    margin-left: 120px;
     border-radius: 100px;
     border: solid 2px black;
 }
@@ -391,6 +418,8 @@ cursor: pointer;
     padding: 5px;
     width: 160px;
     margin-left: 100px;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
     cursor: pointer;
     font-weight: bold;
@@ -399,77 +428,80 @@ cursor: pointer;
     color: white;
     font-size: 17px;
     border-color: transparent;
+    display: flex;
+    flex-direction: column;
 }
 .btn-retirar:hover {
     color: green;
     background-color: white;
     border-color: green;
 }
-.label-retiral{
+.label-retirar{
     margin-top: 30px;
     margin-left: 80px;
+    margin-bottom: 10px;
     font-size: 15px;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
  }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-.desplegable{
+.desple{
     position: absolute;
-    left: -400px;
-    width: 400px;
+    left: -300px;
+    width: 300px;
     height: 100%;
+    margin-top: -25px;
     background-color: white;
     transition: all .5s ease;
     z-index: 1000;
+    border: solid transparent;
     overflow-x: hidden;
     overflow-y: auto;
+    text-decoration: none;
 }
 
-.desplegable header{
-    font-size: 20px;
+.desple header{
+    font-size: 25px;
+    font-weight: bold;
     color: green;
     text-align: center;
+    border-bottom: solid 2px green;
     line-height: 70px;
-    font-weight: bold;
     background-color: white;
     user-select: none;
 }
 
-.desplegable ul a{
+.desple ul a{
     display: block;
     height: 100%;
     width: 100%;
     line-height: 65px;
     font-size: 20px;
-    font-weight: bold;
     color: green;
-    padding-left: 40px;
     box-sizing: border-box;
-    border-top: 1px solid green ;
-    border-bottom: 1px solid green;
+    border: none;
     transition: .4s;
+    text-decoration: none;
+    border: solid transparent;
 }
-
+.desple li{
+    list-style: none;
+}
 ul li:hover a{
     padding-left: 50px;
 }
 
-.desplegable ul a i{
+.desple ul a i{
     margin-right: 16px;
+    text-decoration: none;
 }
 
 #check{
     display:none;
 }
 
-label #flecha, #cancel{
+#flecha{
     position: absolute;
     cursor: pointer;
     margin-top: 15px;
@@ -486,27 +518,59 @@ label #flecha, #cancel{
     transition: all 0.5s ease;
 }
 
+#cancelar{
+    position: absolute;
+    cursor: pointer;
+    color: green;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    margin: 50px 15px;
+    font-size: 39px;
+    background: white;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 45px;
+    transition: all 0.5s ease;
+}
 
-label #cancel{
+label #cancelar{
     opacity: 0;
     visibility: hidden;
 }
-#check:checked ~ .desplegable{
+#check:checked ~ .desple{
     left: 0;
-    border: solid 1px green;
 }
 
 #check:checked~label #flecha {
-    margin-left: 420px;
+    margin-left: 320px;
     opacity: 0;
     visibility: hidden;
 
 }
-#check:checked~label #cancel {
-    margin-left: 420px;
+#check:checked~label #cancelar {
+    margin-top: 15px;
+    margin-left: 320px;
     opacity: 1;
     visibility: visible;
     border: solid 1px green;
+}
+#botonEquis-Comprobante{
+    background-color: lightcoral;
+    color: white;
+    border: solid 2px black;
+    font-weight: bold;
+}
+#botonCerrar-Comprobante{
+    background-color: lightcoral;
+    color: white;
+    border: solid 2px black;
+    font-weight: bold;
+}
+#botonCerrar-Comprobante:hover{
+    color: lightcoral;
+    background-color: white;
+    border-color: lightcoral;
 }
 .correcto{
     border-color: green;
@@ -514,3 +578,4 @@ label #cancel{
 .incorrecto{
     border-color: red;
 }
+
