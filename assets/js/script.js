@@ -113,16 +113,18 @@ const salir = () => {
 };
 
 const verSaldo = () => {
-  const saludo = document.querySelector('#saludoSaldo')
   vistaConsultar.style.display = 'flex'
   vistaConsignar.style.display = 'none'
   vistaRetirar.style.display = 'none'
   vistaTransferir.style.display = 'none'
-  saludo.textContent = `Su saldo disponible es`
+  const texto = document.querySelector("#verSaldo");
+  const saludo = document.querySelector('#saludoSaldo')
+  saludo.textContent = `Hola ${usuario.value}, su saldo disponible es`
+  texto.textContent = `$${saldo}.00`
 }
 function consultarSaldo() {
-  const texto = document.querySelector("p");
-  texto.textContent = `$${saldo}.00`;
+  const texto = document.querySelector("#verSaldo");
+  texto.textContent = `$${saldo}.00`
 }
 
 const seccionConsignar = () => {

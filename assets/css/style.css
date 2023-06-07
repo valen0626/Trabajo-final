@@ -1,28 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
+
 body {
     background-image: url(/assets/img/fondo.png);
     background-size: 100%;
     font-family: sans-serif;
 }
-p{
-font-weight: bold;
-font-size: 20px;
+
+p {
+    font-weight: bold;
+    font-size: 20px;
 }
-#saludoSaldo{
+
+#saludoSaldo {
     margin-bottom: 40px;
     font-size: 20px;
     font-weight: bold;
 }
-main{
+
+main {
     display: flex;
     justify-content: center;
     margin-top: 110px;
-    align-items: center; 
+    align-items: center;
 }
 
 h1 {
@@ -43,12 +47,14 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.login label{
+
+.login label {
     margin-top: 15px;
     margin-bottom: 0px;
     text-align: justify;
     font-size: 15px;
 }
+
 .login-input {
     width: 230px;
     height: 35px;
@@ -76,15 +82,6 @@ h1 {
     font-size: 17px;
     border-color: transparent;
 }
-.modal{
-    width: 30%; 
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.modal-body p{
-    font-weight: normal;
-}
 
 .login .btn:hover {
     background-color: white;
@@ -92,18 +89,21 @@ h1 {
     border-color: green;
 }
 
-.comprobante {
-    flex-wrap: wrap;
-    height: 50px;
-    padding: 200px;
-    background-color: white;
-    border-radius: 10px;
-    border: solid 2px green;
-    align-items: center;
+.modal {
+    width: 30%;
     justify-content: center;
-    display: none;
+    align-items: center;
+    text-align: center;
 }
 
+.modal-body p {
+    font-weight: normal;
+}
+.modal-body i{
+    color: green;
+    font-size: 50px;
+    margin: 5px;
+}
 
 .barra {
     height: 90px;
@@ -137,15 +137,15 @@ h1 {
     height: 90px;
 }
 
-.titulo-consult{
+.titulo-consult {
     margin-top: 20px;
 }
 
-.btonconsult{
-cursor: pointer;
+.btonconsult {
+    cursor: pointer;
 }
 
-.seccionConsultar{
+.seccionConsultar {
     flex-direction: column;
     width: 45%;
     height: 90px;
@@ -160,14 +160,16 @@ cursor: pointer;
     text-align: justify;
     transition: all .5s ease;
 }
-.seccionConsultar img{
+
+.seccionConsultar img {
     margin-top: 10px;
     width: 100px;
     height: 100px;
     border-radius: 100px;
     border: solid 2px black;
 }
-.seccionConsultar input{
+
+.seccionConsultar input {
     width: 150px;
     height: 70px;
     background-color: green;
@@ -179,7 +181,7 @@ cursor: pointer;
     margin-top: 50px;
 }
 
-.seccionConsignar{
+.seccionConsignar {
     align-items: center;
     justify-content: center;
     width: 45%;
@@ -192,7 +194,8 @@ cursor: pointer;
     display: none;
     transition: all .5s ease;
 }
-.titu-consig{
+
+.titu-consig {
     justify-content: center;
     text-align: center;
     background-color: green;
@@ -207,20 +210,23 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
 }
-.input-consig, .input-consigdos{
+
+.input-consig,
+.input-consigdos {
     border: none;
     border-bottom: 2px solid black;
     align-items: center;
     justify-content: center;
     width: 250px;
-    font-size: 15px;    
+    font-size: 15px;
     margin-left: 50px;
     margin-bottom: 10px;
     outline: none;
     display: flex;
     flex-direction: column;
 }
-.img-consing{
+
+.img-consing {
     width: 100px;
     height: 100px;
     margin-top: 20px;
@@ -230,7 +236,8 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
 }
-#boton-consig{
+
+#boton-consig {
     padding: 5px;
     width: 160px;
     margin-left: 100px;
@@ -241,29 +248,33 @@ cursor: pointer;
     border-radius: 10px;
     color: white;
     font-size: 17px;
+    border: 20px;
     border-color: transparent;
 }
-.btnconsignar:hover{
+
+#boton-consig:hover {
     color: green;
     background-color: white;
     border-color: green;
 }
-.label-consing{
-   margin-top: 30px;
-   margin-left: 50px;
-   margin-bottom: 20px;
-   font-weight: bold;
-   display: flex;
-   flex-direction: column;
- }
- .label-consingdos{
-   margin-top: 20px;
-   margin-left: 50px;
-   margin-bottom: 10px;
-   font-weight: bold;
-   display: flex;
-   flex-direction: column;
- }
+
+.label-consing {
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-consingdos {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
 
 .secciontrans {
     width: 40%;
@@ -280,7 +291,7 @@ cursor: pointer;
     transition: all .5s ease;
 }
 
-.titulo-trans{
+.titulo-trans {
     background-color: green;
     width: 300px;
     height: -200px;
@@ -294,7 +305,8 @@ cursor: pointer;
     background-repeat: no-repeat;
 }
 
-.input-trans, .input-transdos{
+.input-trans,
+.input-transdos {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
@@ -307,7 +319,7 @@ cursor: pointer;
     background-repeat: no-repeat;
 }
 
-.tipos-bancos{
+.tipos-bancos {
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -316,10 +328,11 @@ cursor: pointer;
     width: 240px;
     outline: none;
     border: none;
-    border-bottom: solid 2px black;    
+    border-bottom: solid 2px black;
     background-repeat: no-repeat;
 }
-.img-trans{
+
+.img-trans {
     width: 110px;
     height: 110px;
     margin-left: 120px;
@@ -328,7 +341,8 @@ cursor: pointer;
     border: solid 2px black;
     background-repeat: no-repeat;
 }
-.btn-trans{
+
+.btn-trans {
     padding: 5px;
     width: 160px;
     margin-top: 20px;
@@ -339,34 +353,39 @@ cursor: pointer;
     border-radius: 10px;
     color: white;
     font-size: 17px;
-    border-color: transparent;  
+    border-color: transparent;
     background-repeat: no-repeat;
 }
-.btn-trans:hover{
-    color:green;
+
+.btn-trans:hover {
+    color: green;
     background-color: white;
     border-color: green;
 }
-.label-trans{
+
+.label-trans {
     margin-top: 30px;
     margin-left: 60px;
     font-size: 15px;
     font-weight: bold;
 }
-.label-transdos{
-    margin-top:-200px;
+
+.label-transdos {
+    margin-top: -200px;
     margin-left: 60px;
     font-size: 15px;
     font-weight: bold;
     background-repeat: no-repeat;
 }
-.label-bancos{
+
+.label-bancos {
     margin-top: 20px;
     margin-left: 60px;
     font-size: 15px;
     font-weight: bold;
 }
-.seccionRetirar{
+
+.seccionRetirar {
     flex-direction: column;
     width: 45%;
     height: 150px;
@@ -381,6 +400,7 @@ cursor: pointer;
     display: none;
     transition: all .5s ease;
 }
+
 .inputretirar {
     align-items: center;
     justify-content: center;
@@ -393,13 +413,14 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
 }
-.tituloretirar{
+
+.tituloretirar {
     background-color: green;
     width: 300px;
     height: -200px;
     margin-top: -10px;
     margin-left: 35px;
-    font-size:20px ;
+    font-size: 20px;
     text-align: center;
     color: white;
     border: solid 2px black;
@@ -414,6 +435,7 @@ cursor: pointer;
     border-radius: 100px;
     border: solid 2px black;
 }
+
 .btn-retirar {
     padding: 5px;
     width: 160px;
@@ -431,12 +453,14 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
 }
+
 .btn-retirar:hover {
     color: green;
     background-color: white;
     border-color: green;
 }
-.label-retirar{
+
+.label-retirar {
     margin-top: 30px;
     margin-left: 80px;
     margin-bottom: 10px;
@@ -444,9 +468,9 @@ cursor: pointer;
     font-weight: bold;
     display: flex;
     flex-direction: column;
- }
+}
 
-.desple{
+.desple {
     position: absolute;
     left: -300px;
     width: 300px;
@@ -461,7 +485,7 @@ cursor: pointer;
     text-decoration: none;
 }
 
-.desple header{
+.desple header {
     font-size: 25px;
     font-weight: bold;
     color: green;
@@ -472,7 +496,7 @@ cursor: pointer;
     user-select: none;
 }
 
-.desple ul a{
+.desple ul a {
     display: block;
     height: 100%;
     width: 100%;
@@ -485,23 +509,25 @@ cursor: pointer;
     text-decoration: none;
     border: solid transparent;
 }
-.desple li{
+
+.desple li {
     list-style: none;
 }
-ul li:hover a{
+
+ul li:hover a {
     padding-left: 50px;
 }
 
-.desple ul a i{
+.desple ul a i {
     margin-right: 16px;
     text-decoration: none;
 }
 
-#check{
-    display:none;
+#check {
+    display: none;
 }
 
-#flecha{
+#flecha {
     position: absolute;
     cursor: pointer;
     margin-top: 15px;
@@ -518,7 +544,7 @@ ul li:hover a{
     transition: all 0.5s ease;
 }
 
-#cancelar{
+#cancelar {
     position: absolute;
     cursor: pointer;
     color: green;
@@ -534,11 +560,12 @@ ul li:hover a{
     transition: all 0.5s ease;
 }
 
-label #cancelar{
+label #cancelar {
     opacity: 0;
     visibility: hidden;
 }
-#check:checked ~ .desple{
+
+#check:checked~.desple {
     left: 0;
 }
 
@@ -548,6 +575,7 @@ label #cancelar{
     visibility: hidden;
 
 }
+
 #check:checked~label #cancelar {
     margin-top: 15px;
     margin-left: 320px;
@@ -555,27 +583,34 @@ label #cancelar{
     visibility: visible;
     border: solid 1px green;
 }
-#botonEquis-Comprobante{
+
+#botonEquis-Comprobante {
     background-color: lightcoral;
     color: white;
     border: solid 2px black;
     font-weight: bold;
 }
-#botonCerrar-Comprobante{
+
+#botonCerrar-Comprobante {
     background-color: lightcoral;
     color: white;
     border: solid 2px black;
     font-weight: bold;
 }
-#botonCerrar-Comprobante:hover{
+
+#botonCerrar-Comprobante:hover {
     color: lightcoral;
     background-color: white;
     border-color: lightcoral;
 }
-.correcto{
+
+.correcto {
     border-color: green;
 }
-.incorrecto{
+
+.incorrecto {
     border-color: red;
 }
-
+.historialConsultas{
+    
+}
