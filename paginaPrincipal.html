@@ -14,7 +14,8 @@
 
 <body>
   <section class="barra">
-    <img class="logotipo" src="/assets/img/logo.PNG" alt="logo">
+    <a href="#" onclick="siguiente()"><img class="logotipo" src="/assets/img/logo.PNG" alt="logo"></a>
+    <p class="titulo">NEXUS FINANCE</p>
     <input class="btn-salir" type="button" value="Cerrar sesión" onclick="salir()" />
   </section>
   <input type="checkbox" id="check">
@@ -32,11 +33,17 @@
     </ul>
   </section>
   <main>
+    <section class="frase" id="continuar">
+      <img class="logo-frase" src="/assets/img/logocompleto.PNG" alt="imagen">
+    <p class="bienvenidos">Bienvenidos a Nexus Finance</p>
+    <p>-------------------------------------------------------</p>
+    <p class="parra">El banco Nexus Finance es el alido confiable, que te acompaña en tu camino hacia la prosperidad, brindando soluciones y oportunidades para alcanzar tus metas financieras.</p>
+  </section>
     <section class="seccionConsultar" id="vistaConsultar">
       <img src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
       <h1 class="titulo-consult" id="saludoSaldo"></h1>
       <p id="verSaldo"></p>
-      <input id="boton-consig" type="button" value="Actualizar" onclick="consultarSaldo()" />
+      <input id="btonconsult" type="button" value="Actualizar" onclick="consultarSaldo()" />
       <!-- Button trigger modal -->
 <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Ver historial
@@ -125,7 +132,7 @@
         <label class="label-retirar" for="">Valor a retirar</label>
         <input class="inputretirar" name="inputretirar" type="text" placeholder="Ingrese el valor" id="valorARetirar" />
         
-        <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
+        <button id="boton-retirar" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
         onclick="retirar()">
             Aceptar
           </button>
@@ -191,11 +198,11 @@
           <option value="Banco-bogotá" id="banco-bogota">Banco de Bogotá</option>
           <option value="BBVA" id="bbva">BBVA Colombia</option>
         </select>  
-        <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" 
+        <button id="btn-trans" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" 
         onclick="transferir()" >
             Aceptar
           </button>
-          <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+          <button id="btn-trans" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
             Ver historial
           </button>
           <div class="modal fade" id="staticBackdrop2"  data-bs-backdrop="static"  data-bs-keyboard="false" tabindex="-1"

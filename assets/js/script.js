@@ -9,6 +9,7 @@ const vistaConsultar = document.querySelector("#vistaConsultar");
 const vistaConsignar = document.querySelector("#vistaConsignar");
 const vistaTransferir = document.querySelector("#vistaTransferir");
 const vistaRetirar = document.querySelector("#vistaRetirar");
+const continuar = document.querySelector('#continuar')
 let saldo = 1000000;
 
 function Usuario(nombre, contraseña) {
@@ -110,12 +111,19 @@ function validarFormulario(e) {
 const salir = () => {
   location.href = "/index.html";
 };
-
+const siguiente =() =>{
+  continuar.style.display='flex'
+  vistaConsultar.style.display = 'none'
+  vistaConsignar.style.display = 'none'
+  vistaRetirar.style.display = 'none'
+  vistaTransferir.style.display = 'none'
+}
 const verSaldo = () => {
   vistaConsultar.style.display = "flex";
   vistaConsignar.style.display = "none";
   vistaRetirar.style.display = "none";
   vistaTransferir.style.display = "none";
+  continuar.style.display='none'
   const saludo = document.querySelector("#saludoSaldo");
   saludo.textContent = `Hola.. su saldo disponible es`;
 };
@@ -136,7 +144,7 @@ const seccionConsignar = () => {
   vistaConsultar.style.display = "none";
   vistaRetirar.style.display = "none";
   vistaTransferir.style.display = "none";
-
+  continuar.style.display='none'
   inputs.forEach((input) => {
     input.addEventListener("keydown", validarFormulario);
     input.addEventListener("blur", validarFormulario);
@@ -191,6 +199,7 @@ const seccionRetirar = () => {
   vistaConsignar.style.display = "none";
   vistaConsultar.style.display = "none";
   vistaTransferir.style.display = "none";
+  continuar.style.display='none'
   inputs.forEach((input) => {
     input.addEventListener("keydown", validarFormulario);
     input.addEventListener("blur", validarFormulario);
@@ -256,6 +265,7 @@ const seccionTransferir = () => {
   vistaConsignar.style.display = "none";
   vistaRetirar.style.display = "none";
   vistaConsultar.style.display = "none";
+  continuar.style.display='none'
   inputs.forEach((input) => {
     input.addEventListener("keydown", validarFormulario);
     input.addEventListener("blur", validarFormulario);

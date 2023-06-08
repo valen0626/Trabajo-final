@@ -36,6 +36,11 @@ h1 {
     text-align: center;
 }
 
+.titulo{
+    margin-top: -70px;
+    margin-left: 32%;
+    font-size: 50px;
+}
 
 .login {
     border-radius: 20px;
@@ -112,19 +117,23 @@ h1 {
     background-color: white;
     align-items: center;
     justify-content: center;
+    padding: 40px;
 }
 
 .btn-salir {
+    display: flex;
     width: 180px;
     height: 40px;
+    margin-top: -70px;
+    font-weight: bold;
+    justify-content: center;
     background-color: green;
     border-radius: 10px;
     border-color: transparent;
-    float: right;
-    margin: 20px;
+    float: right;   
     cursor: pointer;
     color: white;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 
@@ -133,25 +142,48 @@ h1 {
     background-color: white;
     border-color: green;
 }
+.logo-frase{
+    width: 120px;
+    height: 120px;
+    margin-top: 20px;
 
+}
 .logotipo {
-    height: 90px;
+    margin-top: -30px;
+    margin-left: -10px;
+    height: 65px;
 }
 
 .titulo-consult {
     margin-top: 20px;
 }
 
-.btonconsult {
+#btonconsult {
     cursor: pointer;
+    padding: 5px;
+    width: 160px;
+    margin-left: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    border: 20px;
+    border-color: transparent;
 }
+#btonconsult:hover{
+    color: green;
+    background-color: white;
+    border-color: green;
+}   
 
 .seccionConsultar {
     flex-direction: column;
-    width: 45%;
-    height: 90px;
-    padding: 200px;
-    margin: -60px;
+    width: 40%;
+    height: 400px;
+    margin-top: -60px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
@@ -159,7 +191,7 @@ h1 {
     justify-content: center;
     display: none;
     text-align: justify;
-    transition: all .5s ease;
+    padding: 40px;
 }
 
 .seccionConsultar img {
@@ -170,30 +202,18 @@ h1 {
     border: solid 2px black;
 }
 
-.seccionConsultar input {
-    width: 150px;
-    height: 70px;
-    background-color: green;
-    border-radius: 10px;
-    color: white;
-    font-size: 17px;
-    border-color: transparent;
-    float: right;
-    margin-top: 50px;
-}
-
 .seccionConsignar {
     align-items: center;
     justify-content: center;
     width: 45%;
-    height: 430px;
+    height: 350px;
     margin-top: -60px;
     margin-left: 20px;
     background-color: white;
     border-radius: 10px;
     border: solid 2px green;
     display: none;
-    transition: all .5s ease;
+    padding: 40px;
 }
 
 .titu-consig {
@@ -202,7 +222,7 @@ h1 {
     background-color: green;
     width: 300px;
     height: 25px;
-    margin-top: 10px;
+    margin-top: -50px;
     margin-left: 30px;
     color: white;
     border: 0;
@@ -277,9 +297,8 @@ h1 {
 }
 
 .secciontrans {
-    width: 40%;
-    height: 230px;
-    padding: 250px;
+    width: 32%;
+    height: 550px;
     margin-top: -110px;
     margin-left: -50px;
     background-color: white;
@@ -288,7 +307,7 @@ h1 {
     align-items: center;
     justify-content: center;
     display: none;
-    transition: all .5s ease;
+    padding: 40px;
 }
 
 .titulo-trans {
@@ -342,7 +361,7 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.btn-trans {
+#btn-trans {
     padding: 5px;
     width: 160px;
     margin-top: 20px;
@@ -357,7 +376,7 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.btn-trans:hover {
+#btn-trans:hover {
     color: green;
     background-color: white;
     border-color: green;
@@ -388,8 +407,7 @@ h1 {
 .seccionRetirar {
     flex-direction: column;
     width: 45%;
-    height: 150px;
-    padding: 180px;
+    height: 350px;
     margin-top: -60px;
     margin-left: 20px;
     background-color: white;
@@ -398,7 +416,7 @@ h1 {
     align-items: center;
     justify-content: center;
     display: none;
-    transition: all .5s ease;
+    padding: 40PX;
 }
 
 .inputretirar {
@@ -418,7 +436,7 @@ h1 {
     background-color: green;
     width: 300px;
     height: -200px;
-    margin-top: -10px;
+    margin-top: 10px;
     margin-left: 35px;
     font-size: 20px;
     text-align: center;
@@ -436,13 +454,13 @@ h1 {
     border: solid 2px black;
 }
 
-.btn-retirar {
+#boton-retirar {
     padding: 5px;
     width: 160px;
-    margin-left: 100px;
+    margin-left: 50px;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 10px;
     cursor: pointer;
     font-weight: bold;
     background-color: green;
@@ -450,16 +468,13 @@ h1 {
     color: white;
     font-size: 17px;
     border-color: transparent;
-    display: flex;
-    flex-direction: column;
 }
 
-.btn-retirar:hover {
+#boton-retirar:hover {
     color: green;
     background-color: white;
     border-color: green;
 }
-
 .label-retirar {
     margin-top: 30px;
     margin-left: 80px;
@@ -478,7 +493,7 @@ h1 {
     margin-top: -25px;
     background-color: white;
     transition: all .5s ease;
-    z-index: 1000;
+    z-index: 1000px;
     border: solid transparent;
     overflow-x: hidden;
     overflow-y: auto;
@@ -551,13 +566,13 @@ ul li:hover a {
     border-radius: 100px;
     border: 1px solid transparent;
     margin: 50px 15px;
-    font-size: 39px;
+    font-size: 30px;
     background: white;
     height: 50px;
     width: 50px;
     text-align: center;
     line-height: 45px;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease;  
 }
 
 label #cancelar {
@@ -627,6 +642,173 @@ label #cancelar {
 .incorrecto {
     border-color: red;
 }
-.historialConsultas{
-    
+.frase{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    height: 400px;
+    top: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    width: 500px;
+    height: 400px;
+    margin: 10px;
+    background-color: white;
+    margin-left: 30px;
+    margin-top: -30px;
+    border-radius: 10px;
+    border: solid 2px green;
+}
+
+.bienvenidos{
+    color: green;
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.parra{
+    margin-top: 10px;
+    color: rgb(27, 27, 27);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+ @media (max-width: 1000px)  {
+    .seccionConsultar{
+        margin-top: -90px;
+        width: 330px;
+        height: 450px;
+    }
+    #btonconsult{
+        display: flex;
+        width: 100px;
+        margin-left: 30px;
+        margin-top: 80px; 
+        justify-content: center; 
+
+    }
+
+    .seccionConsignar{
+        margin-top: -80px;
+        margin-left: -10px;
+        padding: 180px;
+    }
+    .titu-consig{
+        width: 70%;
+        margin-top: -10px;
+        margin-left: 40px;
+    }
+    .img-consing{
+        width: 80px;
+        height: 80px;
+        margin-left: 70px;
+    }
+    .label-consing,.label-consingdos{
+        font-size: 12px;
+        margin-left: 30px;
+    }
+    .input-consig,.input-consigdos{
+        width: 180px;
+        font-size: 10px;
+        margin-left: 20px;
+    }
+    #boton-consig{
+        display:block;
+        width: 100px;
+        font-size: 10px;
+        margin-top: 50px;
+        margin-left: 60px;
+    }
+    .titulo-trans{
+        display: block;
+        justify-content: center;
+        width: 200px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    #btn-trans{
+        display: block;
+        width: 100px;
+        margin-top: 10px;
+        margin-left: 80px;
+        font-size: 10px;
+    }
+    .secciontrans{
+        margin-left: 5px;
+        width: 330px;
+        height: 520px;
+    }
+    .input-trans, .input-transdos,.tipos-bancos{
+        width: 200px;
+        font-size: 10px;
+        margin-left: 30px;
+    }
+    .label-trans,.label-transdos,.label-bancos{
+        font-size: 12px;
+        margin-left: 30px;
+    }
+    .img-trans{
+        width: 100px;
+        height: 100px;
+        margin-top: 50px;
+        margin-left: 80px;
+        display: flex;
+    }
+    .seccionRetirar{
+        width: 350px;
+        height: 380px;
+    }
+    .tituloretirar{
+        width: 150px;
+        margin-top: 30px;
+        margin-left: 30px;
+        font-size: 15px;
+    }
+    .imgretirar{
+        width: 80px;
+        height: 80px;
+        margin-left: 65px;
+    }
+    .label-retirar{
+        font-size: 12px;
+        margin-left: 40px;
+        margin-top: 60px;
+    }
+    .inputretirar{
+        width: 160px;
+        font-size: 10px;
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    #boton-retirar{
+        width: 100px;
+        font-size:12px;
+        margin-left: 60px;
+        margin-top: 10px;
+    }
+    .btn-salir{
+        width: 100px;
+        font-size: 12px;
+        margin-top: -50px;
+    }
+    .titulo{
+        font-size: 20px;
+        margin-top: -40px;
+    }
+    .parra{
+        padding: 20px;
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+    .frase{
+        margin-top: -100px;
+    }
+    .bienvenidos{
+        font-size: 20px;
+    }
 }
