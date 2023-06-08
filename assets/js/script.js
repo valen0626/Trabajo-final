@@ -1,14 +1,14 @@
 const usuario = document.querySelector("#usuario");
 const password = document.querySelector("#contraseña");
-const formulario = document.querySelector('form')
-const inputs = document.querySelectorAll('form input')
-const titulo = document.createElement('h1')
-const textoIntentos = document.querySelector("#texto-intentos")
+const formulario = document.querySelector("form");
+const inputs = document.querySelectorAll("form input");
+const titulo = document.createElement("h1");
+const textoIntentos = document.querySelector("#texto-intentos");
 const main = document.querySelector("main");
-const vistaConsultar = document.querySelector('#vistaConsultar')
-const vistaConsignar = document.querySelector('#vistaConsignar')
-const vistaTransferir = document.querySelector('#vistaTransferir')
-const vistaRetirar = document.querySelector('#vistaRetirar')
+const vistaConsultar = document.querySelector("#vistaConsultar");
+const vistaConsignar = document.querySelector("#vistaConsignar");
+const vistaTransferir = document.querySelector("#vistaTransferir");
+const vistaRetirar = document.querySelector("#vistaRetirar");
 let saldo = 1000000;
 
 function Usuario(nombre, contraseña) {
@@ -30,82 +30,81 @@ const validarUsuario = () => {
     password.value == usuarioDos.contraseña
   ) {
     location.href = "/paginaPrincipal.html";
-
   } else if (
     usuario.value == usuarioTres.nombre &&
     password.value == usuarioTres.contraseña
   ) {
     location.href = "/paginaPrincipal.html";
-
   } else {
     contadorIntentos++;
     usuario.value = "";
     password.value = "";
     if (contadorIntentos == 1) {
-      textoIntentos.textContent = 'Le quedan 2 intentos'
+      textoIntentos.textContent = "Le quedan 2 intentos";
     } else if (contadorIntentos == 2) {
-      textoIntentos.textContent = 'Le queda 1 intento'
+      textoIntentos.textContent = "Le queda 1 intento";
     }
   }
 
   if (contadorIntentos >= 3) {
-    formulario.remove()
-    titulo.textContent = "bloqueado"
-    formulario.append(titulo)
+    formulario.remove();
+    titulo.textContent = "bloqueado";
+    formulario.append(titulo);
   }
 };
 
 const expresiones = {
-  numeros: /^-?\d+\.?\d*$/m,
+  numeros: /[0-9]+$/gm,
   dinero: /^((\d+)|(\d{1,3}(\.\d{3})+)|(\d{1,3}(\.\d{3})(\,\d{3})+))(\,\d{2})?$/gm
-}
+};
+const contadorInputsValidos = 0;
 function validarFormulario(e) {
   switch (e.target.name) {
-    case 'cuentaConsignar':
+    case "cuentaConsignar":
       if (expresiones.numeros.test(e.target.value)) {
-        cuentaConsignar.classList.remove('incorrecto')
-        cuentaConsignar.classList.add('correcto')
+        cuentaConsignar.classList.remove("incorrecto");
+        cuentaConsignar.classList.add("correcto");
       } else {
-        cuentaConsignar.classList.remove('correcto')
-        cuentaConsignar.classList.add('incorrecto')
+        cuentaConsignar.classList.remove("correcto");
+        cuentaConsignar.classList.add("incorrecto");
       }
       break;
-    case 'valorAConsignar':
+    case "valorAConsignar":
       if (expresiones.dinero.test(e.target.value)) {
-        valorAConsignar.classList.add('correcto')
-        valorAConsignar.classList.remove('incorrecto')
+        valorAConsignar.classList.add("correcto");
+        valorAConsignar.classList.remove("incorrecto");
       } else {
-        valorAConsignar.classList.remove('correcto')
-        valorAConsignar.classList.add('incorrecto')
+        valorAConsignar.classList.remove("correcto");
+        valorAConsignar.classList.add("incorrecto");
       }
       break;
-    case 'inputretirar':
+    case "inputretirar":
       if (expresiones.dinero.test(e.target.value)) {
-        valorARetirar.classList.add('correcto')
-        valorARetirar.classList.remove('incorrecto')
+        valorARetirar.classList.add("correcto");
+        valorARetirar.classList.remove("incorrecto");
       } else {
-        valorARetirar.classList.remove('correcto')
-        valorARetirar.classList.add('incorrecto')
+        valorARetirar.classList.remove("correcto");
+        valorARetirar.classList.add("incorrecto");
       }
       break;
-    case 'valorTransferir':
+    case "valorTransferir":
       if (expresiones.dinero.test(e.target.value)) {
-        valorTransferir.classList.add('correcto')
-        valorTransferir.classList.remove('incorrecto')
+        valorTransferir.classList.add("correcto");
+        valorTransferir.classList.remove("incorrecto");
       } else {
-        valorTransferir.classList.remove('correcto')
-        valorTransferir.classList.add('incorrecto')
+        valorTransferir.classList.remove("correcto");
+        valorTransferir.classList.add("incorrecto");
       }
       break;
-      case 'cuentaTransferir':
-        if (expresiones.numeros.test(e.target.value)) {
-          cuentaTransferir.classList.add('correcto')
-          cuentaTransferir.classList.remove('incorrecto')
-        } else {
-          cuentaTransferir.classList.remove('correcto')
-          cuentaTransferir.classList.add('incorrecto')
-        }
-        break;  
+    case "cuentaTransferir":
+      if (expresiones.numeros.test(e.target.value)) {
+        cuentaTransferir.classList.add("correcto");
+        cuentaTransferir.classList.remove("incorrecto");
+      } else {
+        cuentaTransferir.classList.remove("correcto");
+        cuentaTransferir.classList.add("incorrecto");
+      }
+      break;
   }
 }
 const salir = () => {
@@ -113,104 +112,214 @@ const salir = () => {
 };
 
 const verSaldo = () => {
-  vistaConsultar.style.display = 'flex'
-  vistaConsignar.style.display = 'none'
-  vistaRetirar.style.display = 'none'
-  vistaTransferir.style.display = 'none'
-  const texto = document.querySelector("#verSaldo");
-  const saludo = document.querySelector('#saludoSaldo')
-  saludo.textContent = `Hola ${usuario.value}, su saldo disponible es`
-  texto.textContent = `$${saldo}.00`
-}
+  vistaConsultar.style.display = "flex";
+  vistaConsignar.style.display = "none";
+  vistaRetirar.style.display = "none";
+  vistaTransferir.style.display = "none";
+  const saludo = document.querySelector("#saludoSaldo");
+  saludo.textContent = `Hola.. su saldo disponible es`;
+};
 function consultarSaldo() {
   const texto = document.querySelector("#verSaldo");
-  texto.textContent = `$${saldo}.00`
+  const modalHistorial = document.querySelector('#historialConsultas')
+  const contenidoModal = document.createElement('section')
+  const nuevaFecha = new Date();
+  contenidoModal.innerHTML+=`<h5>Fecha consulta</h5>
+  <p>${nuevaFecha}</p>
+  <h5>$${saldo}</h5><hr>`
+  texto.textContent = `$${saldo}`;
+  modalHistorial.append(contenidoModal)
 }
 
 const seccionConsignar = () => {
-  vistaConsignar.style.display = 'flex'
-  vistaConsultar.style.display = 'none'
-  vistaRetirar.style.display = 'none'
-  vistaTransferir.style.display = 'none'
+  vistaConsignar.style.display = "flex";
+  vistaConsultar.style.display = "none";
+  vistaRetirar.style.display = "none";
+  vistaTransferir.style.display = "none";
 
   inputs.forEach((input) => {
-    input.addEventListener('keydown', validarFormulario)
-    input.addEventListener('blur', validarFormulario)
+    input.addEventListener("keydown", validarFormulario);
+    input.addEventListener("blur", validarFormulario);
   });
-}
+};
 
 const consignar = () => {
   const valorAConsignar = document.querySelector("#valorAConsignar");
-  const cuentaConsignar = document.querySelector("#cuentaConsignar");
-  const pFechaConsignado = document.querySelector('#pFechaConsignado')
-  const pValorConsignado = document.querySelector('#pValorConsignado')
-  const pCuentaConsignado = document.querySelector('#pCuentaConsignado')
+  const pFechaConsignado = document.querySelector("#pFechaConsignado");
+  const pValorConsignado = document.querySelector("#pValorConsignado");
+  const tituloModal = document.querySelector("#tituloConsignar");
+  const iconoHecho = document.querySelector("#modalConsig #iconoVerdeModal");
+  const iconoIncorrecto = document.querySelector('#modalConsig #iconoRojoModal')
+  const titulosModal = document.querySelectorAll("#modalConsig #h4");
+  const modalHistorial = document.querySelector('#historialConsignar')
+  const contenidoModal = document.createElement('section')
   const nuevaFecha = new Date();
-  pCuentaConsignado.textContent = `${cuentaConsignar.value}`
-  pValorConsignado.textContent = `$${valorAConsignar.value}`
-  pFechaConsignado.textContent = `${nuevaFecha}`
-  valorAConsignar.value =''
-  cuentaConsignar.value =''
-  saldo += parseInt(valorAConsignar.value);
+  if (valorAConsignar != (expresiones.dinero).test(valorAConsignar.value) && 
+  valorAConsignar.value >1) {
+    saldo += parseInt(valorAConsignar.value);
+    tituloModal.textContent = "¡Consignación éxitosa!";
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'block'
+    }
+    iconoHecho.style.display = 'block'
+    iconoIncorrecto.style.display = 'none'
+    pValorConsignado.textContent = `$${valorAConsignar.value}`;
+    pFechaConsignado.textContent = `${nuevaFecha}`;
+    contenidoModal.innerHTML+=`<h5>Fecha consignación</h5>
+  <p>${nuevaFecha}</p>
+  <h5>Valor consignado</h5>
+  <h5 style="color:green;">$+${valorAConsignar.value}</h5><hr>`
+  modalHistorial.append(contenidoModal)
+  valorAConsignar.value = "";
+  } else {
+    tituloModal.textContent = "¡Ingrese datos válidos!";
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'none'
+    }
+    pValorConsignado.textContent = ''
+    pFechaConsignado.textContent = ''
+    iconoIncorrecto.style.display = 'block'
+    iconoHecho.style.display = 'none'
+    valorAConsignar.value = "";
+  }
 };
- 
 
 const seccionRetirar = () => {
-  vistaRetirar.style.display = 'flex'
-  vistaConsignar.style.display = 'none'
-  vistaConsultar.style.display = 'none'
-  vistaTransferir.style.display = 'none'
+  vistaRetirar.style.display = "flex";
+  vistaConsignar.style.display = "none";
+  vistaConsultar.style.display = "none";
+  vistaTransferir.style.display = "none";
   inputs.forEach((input) => {
-    input.addEventListener('keydown', validarFormulario)
-    input.addEventListener('blur', validarFormulario)
+    input.addEventListener("keydown", validarFormulario);
+    input.addEventListener("blur", validarFormulario);
   });
-}
+};
 const retirar = () => {
   const valorARetirar = document.querySelector("#valorARetirar");
-  const pFechaRetirado = document.querySelector('#pFechaRetirado')
-  const pValorRetirado = document.querySelector('#pValorRetirado')
+  const pFechaRetirado = document.querySelector("#pFechaRetirado");
+  const pValorRetirado = document.querySelector("#pValorRetirado");
+  const tituloModal = document.querySelector("#tituloModalRetiro");
+  const iconoHecho = document.querySelector("#modalRetirar #iconoVerdeModal");
+  const iconoIncorrecto = document.querySelector('#modalRetirar #iconoRojoModal')
+  const titulosModal = document.querySelectorAll("#modalRetirar #h4");
+  const modalHistorial = document.querySelector('#historialRetiros')
+  const contenidoModal = document.createElement('section')
   const nuevaFecha = new Date();
   if (parseInt(valorARetirar.value) <= saldo) {
-    saldo -= parseInt(valorARetirar.value);
-    pValorRetirado.textContent = `$${valorARetirar.value}`
-    pFechaRetirado.textContent = `${nuevaFecha}`
-    valorARetirar.value=''
-  } else if (parseInt(valorARetirar.value) > saldo) {
-    alert("¡Saldo insuficiente!");
+    if ( valorARetirar != (expresiones.dinero).test(valorARetirar.value)) {
+      saldo -= parseInt(valorARetirar.value);
+      tituloModal.textContent = "¡Retiro éxitoso!";
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'block'
+    }
+    iconoHecho.style.display = 'block'
+    iconoIncorrecto.style.display = 'none'
+    pValorRetirado.textContent = `$${valorARetirar.value}`;
+    pFechaRetirado.textContent = `${nuevaFecha}`;
+    contenidoModal.innerHTML+=`<h5>Fecha retiro</h5>
+  <p>${nuevaFecha}</p>
+  <h5>Valor retirado</h5>
+  <h5 style="color:red;">$-${valorARetirar.value}</h5><hr>`
+  modalHistorial.append(contenidoModal)
     valorARetirar.value = "";
+    }
+  } else if (parseInt(valorARetirar.value) > saldo) {
+    tituloModal.textContent = "¡Saldo insuficiente!";
+    iconoIncorrecto.style.display = 'block'
+    iconoHecho.style.display = 'none'
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'none'
+    }
+    pFechaRetirado.textContent=''
+    pValorRetirado.textContent=''
+    valorARetirar.value = "";
+  }else {
+    tituloModal.textContent = "¡Ingrese datos válidos!";
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'none'
+    }
+    pFechaRetirado.textContent=''
+    pValorRetirado.textContent=''
+    valorARetirar.value = "";
+    iconoIncorrecto.style.display = 'block'
+    iconoHecho.style.display = 'none'
   }
 };
 
 const seccionTransferir = () => {
-  vistaTransferir.style.display = 'flex'
-  vistaConsignar.style.display = 'none'
-  vistaRetirar.style.display = 'none'
-  vistaConsultar.style.display = 'none'
+  vistaTransferir.style.display = "flex";
+  vistaConsignar.style.display = "none";
+  vistaRetirar.style.display = "none";
+  vistaConsultar.style.display = "none";
   inputs.forEach((input) => {
-    input.addEventListener('keydown', validarFormulario)
-    input.addEventListener('blur', validarFormulario)
+    input.addEventListener("keydown", validarFormulario);
+    input.addEventListener("blur", validarFormulario);
   });
-}
+};
 const transferir = () => {
   const valorTransferir = document.querySelector("#valorTransferir");
-  const cuentaTransferir = document.querySelector("#cuentaTransferir")
-  const pFechaTransferido = document.querySelector('#pFechaTransferido')
-  const pValorTransferido = document.querySelector('#pValorTransferido')
-  const pCuentaTransferido = document.querySelector('#pCuentaTransferido')
-  const pBancoTransferido = document.querySelector('#pBancoTransferido')
+  const cuentaTransferir = document.querySelector("#cuentaTransferir");
+  const pFechaTransferido = document.querySelector("#pFechaTransferido");
+  const pValorTransferido = document.querySelector("#pValorTransferido");
+  const pCuentaTransferido = document.querySelector("#pCuentaTransferido");
+  const pBancoTransferido = document.querySelector("#pBancoTransferido");
   const nuevaFecha = new Date();
-  const seleccionar = document.querySelector('#listaBancos')
+  const seleccionar = document.querySelector("#listaBancos");
+  const tituloModal = document.querySelector("#tituloTransferencia");
+  const iconoHecho = document.querySelector("#modalTrans #iconoVerdeModal");
+  const iconoIncorrecto = document.querySelector('#modalTrans #iconoRojoModal')
+  const titulosModal = document.querySelectorAll("#modalTrans #h4");
   const opciones = seleccionar.options[seleccionar.selectedIndex];
-  if (parseInt(valorTransferir.value) <= saldo) {
-    saldo -= parseInt(valorTransferir.value);
-    pValorTransferido.textContent = `$${valorTransferir.value}`
-    pFechaTransferido.textContent=`${nuevaFecha}`
-    pBancoTransferido.textContent =`${opciones.text}`
-    pCuentaTransferido.textContent=`${cuentaTransferir.value}`
-    valorTransferir.value=''
-    cuentaTransferir.value=''
-  } else if (parseInt(valorTransferir.value) > saldo) {
-    alert("¡Saldo insuficiente!");
+  if (parseInt(valorTransferir.value) > saldo) {
+    tituloModal.textContent = "¡Saldo insuficiente!";
+    iconoIncorrecto.style.display = 'block'
+    iconoHecho.style.display = 'none'
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'none'
+    }
+    pBancoTransferido.textContent = ''
+    pValorTransferido.textContent = ''
+    pFechaTransferido.textContent = ''
+    pCuentaTransferido.textContent = ''
     valorTransferir.value = "";
+    cuentaTransferir.value = "";
+  } else if (parseInt(valorTransferir.value) <= saldo) {
+    if (valorTransferir != (expresiones.dinero).test(valorTransferir.value) &&
+      cuentaTransferir != (expresiones.numeros).test(cuentaTransferir.value)) {
+      saldo -= parseInt(valorTransferir.value);
+      tituloModal.textContent = "¡Tranferencia éxitosa!";
+      for (let i = 0; i < titulosModal.length; i++) {
+        const element = titulosModal[i];
+        element.style.display = 'block'
+      }
+      iconoHecho.style.display = 'block'
+      iconoIncorrecto.style.display = 'none'
+      pValorTransferido.textContent = `$${valorTransferir.value}`;
+      pFechaTransferido.textContent = `${nuevaFecha}`;
+      pBancoTransferido.textContent = `${opciones.text}`;
+      pCuentaTransferido.textContent = `${cuentaTransferir.value}`;
+      valorTransferir.value = "";
+      cuentaTransferir.value = "";
+    }
+  } else {
+    tituloModal.textContent = "¡Ingrese datos válidos!";
+    for (let i = 0; i < titulosModal.length; i++) {
+      const element = titulosModal[i];
+      element.style.display = 'none'
+    }
+    pBancoTransferido.textContent = ''
+    pValorTransferido.textContent = ''
+    pFechaTransferido.textContent = ''
+    pCuentaTransferido.textContent = ''
+    iconoIncorrecto.style.display = 'block'
+    iconoHecho.style.display = 'none'
+    valorTransferir.value = "";
+    cuentaTransferir.value = "";
   }
 };

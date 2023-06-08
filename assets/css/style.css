@@ -89,7 +89,7 @@ h1 {
     border-color: green;
 }
 
-.modal {
+.modal{
     width: 30%;
     justify-content: center;
     align-items: center;
@@ -99,7 +99,8 @@ h1 {
 .modal-body p {
     font-weight: normal;
 }
-.modal-body i{
+.modal-body #iconoModal{
+    
     color: green;
     font-size: 50px;
     margin: 5px;
@@ -583,27 +584,43 @@ label #cancelar {
     visibility: visible;
     border: solid 1px green;
 }
-
-#botonEquis-Comprobante {
-    background-color: lightcoral;
-    color: white;
-    border: solid 2px black;
-    font-weight: bold;
+.modal-body i{
+    font-size: 50px;
+    color: green;
 }
-
-#botonCerrar-Comprobante {
-    background-color: lightcoral;
-    color: white;
-    border: solid 2px black;
-    font-weight: bold;
+#modalTrans #h4{
+    display: none;
 }
-
-#botonCerrar-Comprobante:hover {
-    color: lightcoral;
-    background-color: white;
-    border-color: lightcoral;
+#modalTrans .fa-circle-check {
+    display: none;
+    color: green;
 }
-
+#modalTrans .fa-circle-xmark{
+    display: none;
+    color: red;
+}
+#modalConsig #h4{
+    display: none;
+}
+#modalConsig .fa-circle-check{
+    display: none;
+    color: green;
+}
+#modalConsig .fa-circle-xmark{
+    display: none;
+    color: red;
+}
+#modalRetirar #h4{
+    display: none;
+}
+#modalRetirar .fa-circle-check{
+    display: none;
+    color: green;
+}
+#modalRetirar .fa-circle-xmark{
+    display: none;
+    color: red;
+}
 .correcto {
     border-color: green;
 }

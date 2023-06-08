@@ -37,17 +37,34 @@
       <img src="/assets/img/IMG-CONSULTAR.jpg" alt="logo">
       <h1 class="titulo-consult" id="saludoSaldo"></h1>
       <p id="verSaldo"></p>
-      <input class="btonconsult" type="button" value="Actualizar" onclick="consultarSaldo()" />
-      <section id="historialConsultas" class="historialConsultas">
-        <h1></h1>
-      </section>
+      <input id="boton-consig" type="button" value="Actualizar" onclick="consultarSaldo()" />
+      <!-- Button trigger modal -->
+<button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Ver historial
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Historial de consultas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="historialConsultas">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
     <section class="seccionConsignar" id="vistaConsignar">
       <form action="">
         <h1 class="titu-consig">Consignar</h1>
         <img class="img-consing" src="/assets/img/IMG-CONSIGNAR.jpg" alt="logo">
-        <label class="label-consing" for="">Numero de cuenta</label>
-        <input class="input-consig" type="text" placeholder="Ingrese el numero de cuenta" id="cuentaConsignar" name="cuentaConsignar"/>
         <label class="label-consingdos" for="">Valor a consignar</label>
         <input class="input-consigdos" type="text" placeholder="Ingrese el valor a consignar " id="valorAConsignar" name="valorAConsignar"/>
           <!-- Button trigger modal -->
@@ -55,7 +72,9 @@
             onclick="consignar()">
             Aceptar
           </button>
-
+          <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            Ver historial
+          </button>
           <!-- Modal -->
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -65,14 +84,13 @@
                   <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modal-body">
-                  <h3>¡Consignación éxitosa!</h3>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <h4>Valor consignado </h4>
+                <div class="modal-body" id="modalConsig">
+                  <h3 id="tituloConsignar"></h3>
+                  <i id="iconoVerdeModal" class="fa-solid fa-circle-check"></i>
+                  <i id="iconoRojoModal" class="fa-solid fa-circle-xmark" ></i>
+                  <h4 id="h4">Valor consignado </h4>
                   <p id="pValorConsignado"></p>
-                  <h4>Numero de cuenta</h4>
-                  <p id="pCuentaConsignado"></p>
-                  <h4>Fecha </h4>
+                  <h4 id="h4">Fecha </h4>
                   <p id="pFechaConsignado"></p>
                 </div>
                 <div class="modal-footer">
@@ -82,6 +100,23 @@
               </div>
             </div>
           </div>
+          <!-- Modal historial-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Historial de consignaciones</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="historialConsignar">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+      </div>
+    </div>
+  </div>
+</div>
       </form>
     </section>
     <section class="seccionRetirar" id="vistaRetirar">
@@ -90,9 +125,13 @@
         <img class="imgretirar" src="/assets/img/IMG-RETIRAR.jpg" alt="imagen">
         <label class="label-retirar" for="">Valor a retirar</label>
         <input class="inputretirar" name="inputretirar" type="text" placeholder="Ingrese el valor" id="valorARetirar" />
+        
         <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
         onclick="retirar()">
             Aceptar
+          </button>
+          <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Ver historial
           </button>
           <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -102,12 +141,13 @@
                   <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modal-body">
-                  <h3>¡Retiro éxitoso!</h3>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <h4>Valor retirado </h4>
+                <div class="modal-body" id="modalRetirar">
+                  <h3 id="tituloModalRetiro"></h3>
+                  <i id="iconoVerdeModal" class="fa-solid fa-circle-check"></i>
+                  <i id="iconoRojoModal" class="fa-solid fa-circle-xmark" ></i>
+                  <h4 id="h4">Valor retirado </h4>
                   <p id="pValorRetirado"></p>
-                  <h4>Fecha </h4>
+                  <h4 id="h4">Fecha </h4>
                   <p id="pFechaRetirado"></p>
                 </div>
                 <div class="modal-footer">
@@ -117,6 +157,23 @@
               </div>
             </div>
           </div>
+          <!-- Modal historial-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Historial de retiros</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="historialRetiros">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+      </div>
+    </div>
+  </div>
+</div>
       </form>
     </section>
     <section class="secciontrans" id="vistaTransferir">
@@ -135,11 +192,11 @@
           <option value="Banco-bogotá" id="banco-bogota">Banco de Bogotá</option>
           <option value="BBVA" id="bbva">BBVA Colombia</option>
         </select>  
-        <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"
-        onclick="transferir()">
+        <button id="boton-consig" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" 
+        onclick="transferir()" >
             Aceptar
           </button>
-          <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          <div class="modal fade" id="staticBackdrop2"  data-bs-backdrop="static"  data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -147,16 +204,17 @@
                   <h1 class="modal-title fs-5" id="staticBackdropLabel">Comprobante</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modal-body">
-                  <h3>¡Transferencia éxitosa!</h3>
-                  <i class="fa-solid fa-circle-check"></i>
-                  <h4>Valor Transferido </h4>
+                <div class="modal-body" id="modalTrans">
+                  <h3 id="tituloTransferencia"></h3>
+                  <i id="iconoVerdeModal" class="fa-solid fa-circle-check"></i>
+                  <i id="iconoRojoModal" class="fa-solid fa-circle-xmark" ></i>
+                  <h4 id="h4">Valor Transferido </h4>
                   <p id="pValorTransferido"></p>
-                  <h4>Numero de cuenta </h4>
+                  <h4 id="h4">Numero de cuenta </h4>
                   <p id="pCuentaTransferido"></p>
-                  <h4>Banco </h4>
+                  <h4 id="h4">Banco </h4>
                   <p id="pBancoTransferido"></p>
-                  <h4>Fecha </h4>
+                  <h4 id="h4">Fecha </h4>
                   <p id="pFechaTransferido"></p>
                 </div>
                 <div class="modal-footer">
