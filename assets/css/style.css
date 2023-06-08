@@ -181,7 +181,7 @@ h1 {
 
 .seccionConsultar {
     flex-direction: column;
-    width: 40%;
+    width: 400px;
     height: 400px;
     margin-top: -60px;
     background-color: white;
@@ -206,7 +206,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    width: 450px;
     height: 350px;
     margin-top: -60px;
     margin-left: 20px;
@@ -297,7 +297,7 @@ h1 {
 
 .secciontrans {
     flex-direction: column;
-    width: 32%;
+    width: 400px;
     height: 550px;
     margin-top: -110px;
     margin-left: -50px;
@@ -315,8 +315,6 @@ h1 {
     width: 300px;
     height: -200px;
     font-size: 20px;
-    margin-top: 10px;
-    margin-left: 25px;
     text-align: center;
     color: white;
     border: solid 2px black;
@@ -330,7 +328,7 @@ h1 {
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 60px;
+    margin-left: 40px;
     width: 240px;
     border: none;
     outline: none;
@@ -343,7 +341,7 @@ h1 {
     text-align: center;
     justify-content: center;
     padding: 5px;
-    margin-left: 60px;
+    margin-left: 40px;
     width: 240px;
     outline: none;
     border: none;
@@ -354,7 +352,7 @@ h1 {
 .img-trans {
     width: 110px;
     height: 110px;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-top: 10px;
     border-radius: 100px;
     border: solid 2px black;
@@ -365,7 +363,7 @@ h1 {
     padding: 5px;
     width: 160px;
     margin-top: 20px;
-    margin-left: 100px;
+    margin-left: 80px;
     cursor: pointer;
     font-weight: bold;
     background-color: green;
@@ -406,7 +404,7 @@ h1 {
 
 .seccionRetirar {
     flex-direction: column;
-    width: 35%;
+    width: 450px;
     height: 350px;
     margin-top: -60px;
     margin-left: 20px;
