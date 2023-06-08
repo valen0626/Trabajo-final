@@ -261,6 +261,7 @@ const seccionTransferir = () => {
     input.addEventListener("blur", validarFormulario);
   });
 };
+let acumulado = 0
 const transferir = () => {
   const valorTransferir = document.querySelector("#valorTransferir");
   const cuentaTransferir = document.querySelector("#cuentaTransferir");
@@ -274,7 +275,10 @@ const transferir = () => {
   const iconoHecho = document.querySelector("#modalTrans #iconoVerdeModal");
   const iconoIncorrecto = document.querySelector('#modalTrans #iconoRojoModal')
   const titulosModal = document.querySelectorAll("#modalTrans #h4");
+  const modalHistorial = document.querySelector('#historialTransferido')
+  const contenidoModal = document.createElement('section')
   const opciones = seleccionar.options[seleccionar.selectedIndex];
+  const mostrarAcumulado =document.querySelector('#mostrarAcumulado')
   if (parseInt(valorTransferir.value) > saldo) {
     tituloModal.textContent = "¡Saldo insuficiente!";
     iconoIncorrecto.style.display = 'block'
@@ -304,6 +308,16 @@ const transferir = () => {
       pFechaTransferido.textContent = `${nuevaFecha}`;
       pBancoTransferido.textContent = `${opciones.text}`;
       pCuentaTransferido.textContent = `${cuentaTransferir.value}`;
+      acumulado+=parseInt(valorTransferir.value);
+      contenidoModal.innerHTML+=`<h5>Fecha transferencia</h5>
+  <p>${nuevaFecha}</p>
+  <h5>Cuenta destino</h5>
+  <p>${cuentaTransferir.value}
+  <h5>Valor transferido</h5>
+  <h5 style="color:red;">$-${valorTransferir.value}</h5><hr>`
+  modalHistorial.append(contenidoModal)
+  mostrarAcumulado.style.color='red'
+  mostrarAcumulado.textContent=`$-${acumulado}`
       valorTransferir.value = "";
       cuentaTransferir.value = "";
     }
